@@ -28,6 +28,255 @@
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { font-size: 16px; }
+
+        /* =========================================
+           MUSIC PLAYER WIDGET
+        ========================================= */
+        #music-player {
+            position: fixed;
+            bottom: 9.5rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: .5rem;
+        }
+
+        /* Floating music bar */
+        .music-bar {
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(14px);
+            border: 2px solid rgba(41,182,246,.35);
+            border-radius: 50px;
+            padding: .45rem .9rem;
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            box-shadow: 0 6px 24px rgba(41,182,246,.25);
+            transition: all .3s;
+            white-space: nowrap;
+            max-width: 260px;
+            overflow: hidden;
+        }
+
+        .music-bar.minimised {
+            max-width: 52px;
+            padding: .45rem;
+            border-radius: 50%;
+        }
+        .music-bar.minimised .music-meta,
+        .music-bar.minimised .music-vol,
+        .music-bar.minimised .lyrics-btn { display: none; }
+
+        .music-toggle-btn {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+            transition: all .25s;
+        }
+        /* Playing = colourful pulse */
+        .music-toggle-btn.playing {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            animation: music-pulse 1.6s ease-in-out infinite;
+        }
+        /* Muted = grey */
+        .music-toggle-btn.muted {
+            background: #e0e0e0;
+            color: #9e9e9e;
+            animation: none;
+        }
+        @keyframes music-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(41,182,246,.5); }
+            50%       { box-shadow: 0 0 0 8px rgba(41,182,246,0); }
+        }
+
+        .music-meta { flex: 1; overflow: hidden; }
+        .music-title {
+            font-family: var(--font-head);
+            font-size: .72rem; font-weight: 800; color: var(--dark);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            max-width: 120px;
+        }
+        .music-sub { font-size: .62rem; color: #78909c; }
+
+        /* Equalizer bars (animated while playing) */
+        .eq-bars { display: flex; align-items: flex-end; gap: 2px; height: 18px; }
+        .eq-bar {
+            width: 3px; border-radius: 3px;
+            background: var(--blue);
+            animation: eq-bounce .5s ease-in-out infinite alternate;
+        }
+        .eq-bar:nth-child(1) { height: 6px;  animation-delay: 0s;    background: var(--orange); }
+        .eq-bar:nth-child(2) { height: 14px; animation-delay: .1s;   background: var(--yellow); }
+        .eq-bar:nth-child(3) { height: 10px; animation-delay: .2s;   background: var(--green); }
+        .eq-bar:nth-child(4) { height: 16px; animation-delay: .05s;  background: var(--blue); }
+        .eq-bar:nth-child(5) { height: 8px;  animation-delay: .15s;  background: var(--purple); }
+        @keyframes eq-bounce {
+            from { transform: scaleY(.3); }
+            to   { transform: scaleY(1); }
+        }
+        .eq-bars.paused .eq-bar { animation-play-state: paused; }
+
+        /* Volume slider */
+        .music-vol {
+            display: flex; align-items: center; gap: .3rem;
+        }
+        .music-vol i { font-size: .7rem; color: #78909c; }
+        .vol-slider {
+            -webkit-appearance: none;
+            width: 55px; height: 4px;
+            border-radius: 4px; background: #e0e0e0;
+            outline: none; cursor: pointer;
+        }
+        .vol-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--blue); cursor: pointer;
+        }
+
+        /* Lyrics button */
+        .lyrics-btn {
+            background: linear-gradient(135deg, var(--orange), var(--pink));
+            color: white; border: none; border-radius: 20px;
+            padding: .25rem .65rem; font-size: .68rem; font-weight: 800;
+            cursor: pointer; white-space: nowrap;
+            transition: all .2s;
+        }
+        .lyrics-btn:hover { transform: scale(1.06); }
+
+        /* Minimise toggle */
+        .music-minimise {
+            background: none; border: none; cursor: pointer;
+            color: #90a4ae; font-size: .75rem; padding: .2rem;
+            transition: color .2s;
+        }
+        .music-minimise:hover { color: var(--dark); }
+
+        /* =========================================
+           LYRICS MODAL
+        ========================================= */
+        .lyrics-overlay {
+            display: none; position: fixed; inset: 0;
+            z-index: 9998;
+            background: rgba(10,20,80,.75);
+            backdrop-filter: blur(8px);
+            align-items: center; justify-content: center;
+            padding: 1rem;
+        }
+        .lyrics-overlay.open { display: flex; }
+
+        .lyrics-modal {
+            background: linear-gradient(160deg, #0D1B4B 0%, #1A237E 50%, #0D47A1 100%);
+            border: 1.5px solid rgba(255,255,255,.18);
+            border-radius: 28px;
+            padding: 0;
+            width: 100%;
+            max-width: 680px;
+            max-height: 88vh;
+            display: flex; flex-direction: column;
+            box-shadow: 0 24px 64px rgba(0,0,0,.5);
+            animation: lyrics-slide .4s cubic-bezier(.34,1.56,.64,1);
+            overflow: hidden;
+        }
+        @keyframes lyrics-slide {
+            from { transform: translateY(40px) scale(.95); opacity: 0; }
+            to   { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .lyrics-header {
+            padding: 1.5rem 2rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,.12);
+            display: flex; align-items: center; gap: 1rem;
+            flex-shrink: 0;
+        }
+        .lyrics-header-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(255,214,0,.4);
+            animation: logo-bounce .8s ease-in-out infinite alternate;
+        }
+        .lyrics-header-text h3 {
+            font-family: var(--font-head); font-size: 1.1rem;
+            font-weight: 800; color: var(--yellow);
+        }
+        .lyrics-header-text p { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: .2rem; }
+        .lyrics-eq {
+            display: flex; align-items: flex-end; gap: 2px; height: 24px; margin-left: auto;
+        }
+        .lyrics-eq .eq-bar { height: 10px; }
+
+        .lyrics-close {
+            background: rgba(255,255,255,.12); border: none;
+            border-radius: 50%; width: 36px; height: 36px;
+            color: white; font-size: 1rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .2s; flex-shrink: 0; margin-left: .5rem;
+        }
+        .lyrics-close:hover { background: rgba(255,107,53,.5); }
+
+        .lyrics-body {
+            padding: 1.5rem 2rem 2rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .lyrics-body::-webkit-scrollbar { width: 5px; }
+        .lyrics-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,.2); border-radius: 5px; }
+
+        .lyrics-block { margin-bottom: 1.6rem; }
+        .lyrics-section-tag {
+            display: inline-block;
+            font-size: .68rem; font-weight: 800; letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: .2rem .75rem; border-radius: 20px;
+            margin-bottom: .7rem;
+        }
+        .tag-intro   { background: rgba(255,107,53,.25); color: #FFA07A; border: 1px solid rgba(255,107,53,.4); }
+        .tag-verse   { background: rgba(41,182,246,.25); color: #80D8FF; border: 1px solid rgba(41,182,246,.4); }
+        .tag-chorus  { background: rgba(255,214,0,.25);  color: #FFD600; border: 1px solid rgba(255,214,0,.4); }
+        .tag-bridge  { background: rgba(0,200,150,.25);  color: #69F0AE; border: 1px solid rgba(0,200,150,.4); }
+        .tag-pre     { background: rgba(156,39,176,.25); color: #EA80FC; border: 1px solid rgba(156,39,176,.4); }
+        .tag-outro   { background: rgba(255,64,129,.25); color: #FF80AB; border: 1px solid rgba(255,64,129,.4); }
+        .tag-reff    { background: rgba(255,214,0,.25);  color: #FFD600; border: 1px solid rgba(255,214,0,.4); }
+
+        .lyrics-singer {
+            font-size: .7rem; font-style: italic; color: rgba(255,255,255,.4);
+            margin-bottom: .35rem;
+        }
+        .lyrics-line {
+            font-family: var(--font-main);
+            font-size: 1rem; font-weight: 700;
+            color: rgba(255,255,255,.92);
+            line-height: 1.75;
+            padding: .1rem 0;
+            transition: all .3s;
+        }
+        .lyrics-line:empty { height: .5rem; }
+        .lyrics-line.highlight {
+            color: var(--yellow);
+            text-shadow: 0 0 12px rgba(255,214,0,.5);
+        }
+        .lyrics-line.sfx {
+            font-size: .8rem; font-style: italic;
+            color: rgba(255,255,255,.35);
+        }
+        .lyrics-divider {
+            border: none; border-top: 1px dashed rgba(255,255,255,.12);
+            margin: 1rem 0;
+        }
+        .lyrics-footer {
+            text-align: center; margin-top: 1rem;
+            padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.1);
+        }
+        .lyrics-footer p {
+            font-size: .75rem; color: rgba(255,255,255,.4);
+        }
+
         body {
             font-family: var(--font-main);
             background: #E8F4FD;
@@ -653,13 +902,74 @@
             font-size: 2rem; color: white;
         }
 
+        /* GALERI VIDEO STYLES */
+        .galeri-video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        @media (max-width: 900px) {
+            .galeri-video-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .galeri-video-grid { grid-template-columns: 1fr; }
+        }
+
+        .galeri-video-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 8px 24px var(--shadow);
+            cursor: pointer;
+            aspect-ratio: 9 / 14;
+            max-height: 400px;
+            transition: transform .3s, box-shadow .3s, border-color .3s;
+            border: 3px solid white;
+        }
+        .galeri-video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(21,101,192,0.25);
+            border-color: var(--yellow);
+        }
+        .galeri-video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .galeri-video-badge {
+            position: absolute;
+            top: 12px; right: 12px;
+            background: rgba(255,107,53,0.9);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            display: flex; align-items: center; gap: 4px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .galeri-video-title {
+            position: absolute;
+            bottom: 0; inset-x: 0;
+            padding: 1.2rem 0.8rem 0.8rem;
+            background: linear-gradient(to top, rgba(13,27,75,0.92) 0%, rgba(13,27,75,0) 100%);
+            color: white;
+            font-family: var(--font-head);
+            font-size: 0.88rem;
+            font-weight: 800;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
         /* Lightbox */
         .lightbox {
             display: none; position: fixed; inset: 0; z-index: 9999;
             background: rgba(0,0,0,.9); align-items: center; justify-content: center;
         }
         .lightbox.open { display: flex; }
-        .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 16px; }
+        .lightbox img, .lightbox video { max-width: 90vw; max-height: 85vh; border-radius: 16px; }
         .lightbox-close {
             position: absolute; top: 1rem; right: 1.5rem;
             font-size: 2.5rem; color: white; cursor: pointer;
@@ -2140,6 +2450,13 @@
 <body>
 
 <!-- ==========================================
+     BACKGROUND MUSIC (Autoplay + Loop)
+     ========================================== -->
+<audio id="bg-music" loop preload="auto">
+    <source src="Jingle Bintang Rabbani.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ==========================================
      ANIMATED SKY BACKGROUND
      ========================================== -->
 <div class="sky-canvas" id="skyCanvas"></div>
@@ -2601,15 +2918,43 @@
 <section id="galeri">
     <div class="container">
         <div class="badge" style="display:flex;width:fit-content;margin:0 auto 1rem;">
-            <i class="fa-solid fa-camera"></i> Galeri Kegiatan
+            <i class="fa-solid fa-camera"></i> Galeri &amp; Dokumentasi Kegiatan
         </div>
         <h2 class="section-title" style="color:var(--dark)">Momen Berharga Bersama</h2>
         <p class="section-sub">
-            Lihat keceriaan santri Bintang Rabbani dalam setiap kegiatan belajar.<br>
+            Lihat keceriaan santri Bintang Rabbani dalam setiap kegiatan belajar dan peribadahan.<br>
             <span style="font-size:0.8rem; font-style:italic; opacity:0.8; display:block; margin-top:0.4rem;">
                 *gambar atau photo photo berasal dari gambar asli proses kegiatan pembelajaran namun diedit dengan AI
             </span>
         </p>
+
+        <!-- DOKUMENTASI VIDEO -->
+        <div style="display:flex;align-items:center;gap:0.6rem;margin:2rem 0 1rem;font-family:var(--font-head);font-size:1.15rem;font-weight:800;color:var(--dblue);">
+            <i class="fa-solid fa-film" style="color:var(--orange);"></i> 🎬 Video Dokumentasi Kegiatan Santri
+        </div>
+
+        <div class="galeri-video-grid">
+            <div class="galeri-video-card fade-in" onclick="openVideoLightbox('jadikan_video_ini_menjadi_vide.mp4')">
+                <video autoplay muted loop playsinline src="jadikan_video_ini_menjadi_vide.mp4"></video>
+                <div class="galeri-video-badge"><i class="fa-solid fa-play"></i> Putar Video</div>
+                <div class="galeri-video-title">🎥 Suasana Belajar Ceria Santri</div>
+            </div>
+            <div class="galeri-video-card fade-in fade-in-delay-1" onclick="openVideoLightbox('jadikan_video_ini_menjadi_vide (1).mp4')">
+                <video autoplay muted loop playsinline src="jadikan_video_ini_menjadi_vide (1).mp4"></video>
+                <div class="galeri-video-badge"><i class="fa-solid fa-play"></i> Putar Video</div>
+                <div class="galeri-video-title">🎥 Praktek Ibadah &amp; Doa Santri</div>
+            </div>
+            <div class="galeri-video-card fade-in fade-in-delay-2" onclick="openVideoLightbox('jadikan_video_dengan_gambar_in.mp4')">
+                <video autoplay muted loop playsinline src="jadikan_video_dengan_gambar_in.mp4"></video>
+                <div class="galeri-video-badge"><i class="fa-solid fa-play"></i> Putar Video</div>
+                <div class="galeri-video-title">🎥 Kebersamaan Ustadzah &amp; Santri</div>
+            </div>
+        </div>
+
+        <!-- DOKUMENTASI FOTO -->
+        <div style="display:flex;align-items:center;gap:0.6rem;margin:2.5rem 0 1rem;font-family:var(--font-head);font-size:1.15rem;font-weight:800;color:var(--dblue);">
+            <i class="fa-solid fa-images" style="color:var(--blue);"></i> 📸 Galeri Foto Momen Santri
+        </div>
 
         <div class="galeri-grid">
             <div class="galeri-item fade-in" onclick="openLightbox('Gemini_Generated_Image_4fh7qz4fh7qz4fh7.webp')">
@@ -2636,22 +2981,6 @@
                 <img src="momen_2.jpg" alt="Praktek Ibadah Sholat Santri Bintang Rabbani">
                 <div class="galeri-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
-            <div class="galeri-item fade-in fade-in-delay-2" onclick="openLightbox('Gemini_Generated_Image_hoqqqehoqqqehoqq.webp')">
-                <img src="Gemini_Generated_Image_hoqqqehoqqqehoqq.webp" alt="Suasana kelas yang ceria">
-                <div class="galeri-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="galeri-item fade-in fade-in-delay-3" onclick="openLightbox('Gemini_Generated_Image_4fh7qz4fh7qz4fh7.webp')">
-                <img src="Gemini_Generated_Image_4fh7qz4fh7qz4fh7.webp" alt="Kebersamaan santri Bintang Rabbani">
-                <div class="galeri-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="galeri-item fade-in" onclick="openLightbox('Gemini_Generated_Image_4fh7qz4fh7qz4fh7.webp')">
-                <img src="Gemini_Generated_Image_4fh7qz4fh7qz4fh7.webp" alt="Praktek ibadah anak-anak">
-                <div class="galeri-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-            <div class="galeri-item fade-in fade-in-delay-1" onclick="openLightbox('Gemini_Generated_Image_hoqqqehoqqqehoqq.webp')">
-                <img src="Gemini_Generated_Image_hoqqqehoqqqehoqq.webp" alt="Belajar dengan semangat">
-                <div class="galeri-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
         </div>
     </div>
 </section>
@@ -2659,7 +2988,8 @@
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close">&times;</button>
-    <img id="lightbox-img" src="" alt="">
+    <img id="lightbox-img" src="" alt="" style="display:none;">
+    <video id="lightbox-video" src="" controls autoplay style="display:none; max-width: 90vw; max-height: 85vh; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);"></video>
 </div>
 
 <!-- ==========================================
@@ -4278,14 +4608,39 @@ function toggleCheck(item) {
 }
 
 /* ============================================
-   10. LIGHTBOX
+   10. LIGHTBOX (IMAGE & VIDEO)
    ============================================ */
 function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
+    const img = document.getElementById('lightbox-img');
+    const vid = document.getElementById('lightbox-video');
+    if (img && vid) {
+        vid.pause();
+        vid.style.display = 'none';
+        vid.src = '';
+        img.src = src;
+        img.style.display = 'block';
+    }
+    document.getElementById('lightbox').classList.add('open');
+}
+function openVideoLightbox(src) {
+    const img = document.getElementById('lightbox-img');
+    const vid = document.getElementById('lightbox-video');
+    if (img && vid) {
+        img.style.display = 'none';
+        img.src = '';
+        vid.src = src;
+        vid.style.display = 'block';
+        vid.play();
+    }
     document.getElementById('lightbox').classList.add('open');
 }
 function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
+    const vid = document.getElementById('lightbox-video');
+    if (vid) {
+        vid.pause();
+        vid.src = '';
+    }
+    document.getElementById('lightbox')?.classList.remove('open');
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
@@ -6144,12 +6499,323 @@ function downloadBrosurFromIframe() {
 
 // Initialize on DOM Ready
 window.addEventListener('DOMContentLoaded', function() {
-    initCabangData();
-    buildSantriForms();
-    renderGuruRows();
-    renderCabangAwalSantriTable();
+    if (typeof initCabangData === 'function') initCabangData();
+    if (typeof buildSantriForms === 'function') buildSantriForms();
+    if (typeof renderGuruRows === 'function') renderGuruRows();
+    if (typeof renderCabangAwalSantriTable === 'function') renderCabangAwalSantriTable();
 });
 </script>
+
+<!-- ==========================================
+     MUSIC PLAYER WIDGET (Fixed floating)
+     ========================================== -->
+<div id="music-player">
+    <div class="music-bar" id="music-bar">
+        <!-- Mute / Play toggle button -->
+        <button class="music-toggle-btn playing" id="music-toggle-btn"
+                title="Klik untuk Mute/Unmute lagu"
+                onclick="toggleMusic()">
+            <i class="fa-solid fa-music" id="music-icon"></i>
+        </button>
+
+        <!-- Song info -->
+        <div class="music-meta">
+            <div class="music-title">🎵 Jingle Bintang Rabbani</div>
+            <div class="music-sub">Autoplay · Looping</div>
+        </div>
+
+        <!-- Equalizer animation -->
+        <div class="eq-bars" id="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+        </div>
+
+        <!-- Volume -->
+        <div class="music-vol">
+            <i class="fa-solid fa-volume-low"></i>
+            <input type="range" class="vol-slider" id="vol-slider"
+                   min="0" max="1" step="0.05" value="0.7"
+                   title="Atur volume"
+                   oninput="setVolume(this.value)">
+        </div>
+
+        <!-- Lyrics button -->
+        <button class="lyrics-btn" onclick="openLyrics()" title="Lihat Lirik">
+            📜 Lirik
+        </button>
+
+        <!-- Minimise -->
+        <button class="music-minimise" id="music-minimise-btn"
+                onclick="toggleMinimise()" title="Perkecil">
+            <i class="fa-solid fa-chevron-right" id="minimise-icon"></i>
+        </button>
+    </div>
+</div>
+
+<!-- ==========================================
+     LYRICS MODAL
+     ========================================== -->
+<div class="lyrics-overlay" id="lyrics-overlay" onclick="closeLyricsOnBg(event)">
+    <div class="lyrics-modal">
+        <!-- Header -->
+        <div class="lyrics-header">
+            <div class="lyrics-header-icon">🎵</div>
+            <div class="lyrics-header-text">
+                <h3>Jingle Bintang Rabbani</h3>
+                <p>Bimbel TPQ Plus Bintang Rabbani — Cerdas, Ceria, Berakhlak Qur'ani!</p>
+            </div>
+            <!-- Mini EQ in header -->
+            <div class="lyrics-eq" id="lyrics-eq">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+            <button class="lyrics-close" onclick="closeLyrics()" title="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Lyrics body -->
+        <div class="lyrics-body">
+
+            <!-- INTRO -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-intro">✨ Intro</span>
+                <div class="lyrics-singer">🎤 Singer: Anak-anak</div>
+                <div class="lyrics-line sfx">[SFX: tepuk tangan anak-anak]</div>
+                <div class="lyrics-line highlight">Satu, dua, tiga!</div>
+                <div class="lyrics-line highlight">Bintang Rabbani!</div>
+                <div class="lyrics-line">Cerdas, ceria, berakhlak Qur'ani!</div>
+                <div class="lyrics-line">La la la la, la la la la</div>
+                <div class="lyrics-line highlight">Yaaay! 🎉</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- VERSE 1 -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-verse">🎵 Verse 1</span>
+                <div class="lyrics-singer">🎤 Singer: Guru</div>
+                <div class="lyrics-line">Semangat pagi, cinta belajar</div>
+                <div class="lyrics-line">Matahari tersenyum ramah</div>
+                <div class="lyrics-line">Langkah kecil melompat gembira</div>
+                <div class="lyrics-line">Bawa buku dan senyuman cerah</div>
+                <br>
+                <div class="lyrics-line">Menuntut ilmu, mencari rida Allah</div>
+                <div class="lyrics-line">Ayo kawan, kita membaca</div>
+                <div class="lyrics-line highlight">A, B, C sampai Z!</div>
+                <div class="lyrics-line">Buku jadi jendela dunia</div>
+                <br>
+                <div class="lyrics-line">Kata indah kami rangkai</div>
+                <div class="lyrics-line">Ayo kawan, kita menulis</div>
+                <div class="lyrics-line highlight">Torehkan prestasi!!!! 🌟</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- ALL TOGETHER -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-verse">🎶 Singer: Semua</span>
+                <div class="lyrics-line">Satu tambah satu, mari berhitung</div>
+                <div class="lyrics-line">Matematika asyik bersama guru</div>
+                <div class="lyrics-line">Nilai agama, akhlak mulia</div>
+                <div class="lyrics-line">Belajar Qur'an dengan bahagia</div>
+                <br>
+                <div class="lyrics-line">Tajwid dan tilawah, doa setiap hari</div>
+                <div class="lyrics-line">Sedekah, hormat ayah bunda, sayang sesama</div>
+                <div class="lyrics-line">Tumbuh saleh dan salehah</div>
+                <div class="lyrics-line highlight">Bintang duniaa…, berkah akhiratnya ✨</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- REFF -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-reff">⭐ Reff</span>
+                <div class="lyrics-line highlight">Bintang Rabbani, tempat asyik belajar</div>
+                <div class="lyrics-line highlight">Cerdas akalnya, hatinya bersinar</div>
+                <div class="lyrics-line highlight">TPQ Bintang Rabbani, sahabat generasi madani</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- BRIDGE 1 -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-bridge">🌉 Bridge</span>
+                <div class="lyrics-line">Membaca, menulis, berhitung, mengaji</div>
+                <div class="lyrics-line highlight">Wujudkan cita-cita anak negeri! 🇮🇩</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- VERSE 3 -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-verse">🎵 Verse 3</span>
+                <div class="lyrics-line">Belajar di sini tiada rasa jenuh</div>
+                <div class="lyrics-line">Bermain dan bernalar dengan sungguh-sungguh</div>
+                <div class="lyrics-line">Adab diutamakan, ilmu ditingkatkan</div>
+                <div class="lyrics-line">Karakter juara kita kembangkan</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- PRE-CHORUS -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-pre">💜 Pre-Chorus</span>
+                <div class="lyrics-line">Kecil dibina, kelak jadi pelita</div>
+                <div class="lyrics-line">Membangun bangsa dengan iman dan takwa</div>
+                <div class="lyrics-line">Langkah demi langkah menuju mimpi</div>
+                <div class="lyrics-line highlight">Cahaya berkilau di dalam sanubari 💫</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- BRIDGE 2 -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-bridge">🌉 Bridge — Untuk Ayah & Bunda</span>
+                <div class="lyrics-line">Wahai ayah dan bunda</div>
+                <div class="lyrics-line">Mari wujudkan ruang belajar penuh berkah di rumah</div>
+                <div class="lyrics-line">Bukalah pintu kebaikan</div>
+                <div class="lyrics-line">Lahirkan generasi gemilang di setiap lingkungan</div>
+                <div class="lyrics-line highlight">"Ayo buka cabang Bintang Rabbani sekarang!" 🏠</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- CHORUS -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-chorus">🌟 Chorus — Singer: Semua</span>
+                <div class="lyrics-line highlight">Bintang Rabbani, tempat asyik belajar</div>
+                <div class="lyrics-line highlight">Cerdas akalnya, hatinya bersinar</div>
+                <div class="lyrics-line highlight">TPQ Bintang Rabbani, rumah generasi madani</div>
+                <div class="lyrics-line highlight">Ayo gabung bersama kami</div>
+                <div class="lyrics-line highlight">Raih berkah, cerdas dan mandiri! ⭐</div>
+            </div>
+            <hr class="lyrics-divider">
+
+            <!-- OUTRO -->
+            <div class="lyrics-block">
+                <span class="lyrics-section-tag tag-outro">🎊 Outro</span>
+                <div class="lyrics-singer">🎤 Singer: Anak-anak</div>
+                <div class="lyrics-line highlight">Bimbel TPQ Bintang Rabbani!</div>
+                <div class="lyrics-line highlight">Cerdas dunianya, berkah akhiratnya!</div>
+                <div class="lyrics-line highlight">Daftar yuk! 🎉</div>
+                <div class="lyrics-line highlight">Horeee! 🎊</div>
+                <div class="lyrics-line sfx">[SFX: tawa gembira anak-anak 😄]</div>
+            </div>
+
+            <!-- Footer -->
+            <div class="lyrics-footer">
+                <p>🎵 Jingle Resmi TPQ Plus Bintang Rabbani · Hak Cipta Dilindungi</p>
+                <p style="margin-top:.3rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MUSIC PLAYER JAVASCRIPT
+     ========================================== -->
+<script>
+/* ============================================
+   MUSIC PLAYER — Autoplay + Mute Toggle + Volume
+   ============================================ */
+(function initMusicPlayer() {
+    const audio    = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle-btn');
+    const musicIcon = document.getElementById('music-icon');
+    const eqBars   = document.getElementById('eq-bars');
+    const lyricsEq = document.getElementById('lyrics-eq');
+    const volSlider = document.getElementById('vol-slider');
+
+    let isMuted = false;
+    let isMinimised = false;
+
+    // Set initial volume
+    audio.volume = parseFloat(volSlider.value);
+
+    // --- Attempt autoplay ---
+    function startPlay() {
+        const promise = audio.play();
+        if (promise !== undefined) {
+            promise.catch(() => {
+                // Autoplay blocked — wait for first user interaction
+                document.addEventListener('click', function resumeOnClick() {
+                    audio.play().catch(() => {});
+                    document.removeEventListener('click', resumeOnClick);
+                }, { once: true });
+            });
+        }
+    }
+    startPlay();
+
+    // --- Sync EQ animation with play state ---
+    function syncEQ() {
+        const paused = audio.paused || isMuted;
+        [eqBars, lyricsEq].forEach(el => {
+            if (!el) return;
+            el.classList.toggle('paused', paused);
+        });
+    }
+
+    audio.addEventListener('play',  syncEQ);
+    audio.addEventListener('pause', syncEQ);
+
+    // --- Toggle Mute / Unmute ---
+    window.toggleMusic = function () {
+        isMuted = !isMuted;
+        audio.muted = isMuted;
+
+        if (isMuted) {
+            toggleBtn.classList.replace('playing', 'muted');
+            musicIcon.className = 'fa-solid fa-volume-xmark';
+            toggleBtn.title = 'Klik untuk Unmute lagu';
+        } else {
+            toggleBtn.classList.replace('muted', 'playing');
+            musicIcon.className = 'fa-solid fa-music';
+            toggleBtn.title = 'Klik untuk Mute lagu';
+            // Resume if paused
+            if (audio.paused) audio.play().catch(() => {});
+        }
+        syncEQ();
+    };
+
+    // --- Volume control ---
+    window.setVolume = function (val) {
+        audio.volume = parseFloat(val);
+        // Un-mute if user raises volume
+        if (parseFloat(val) > 0 && isMuted) {
+            toggleMusic();
+        }
+    };
+
+    // --- Minimise / expand player bar ---
+    window.toggleMinimise = function () {
+        isMinimised = !isMinimised;
+        const bar = document.getElementById('music-bar');
+        const icon = document.getElementById('minimise-icon');
+        bar.classList.toggle('minimised', isMinimised);
+        icon.className = isMinimised
+            ? 'fa-solid fa-chevron-left'
+            : 'fa-solid fa-chevron-right';
+    };
+})();
+
+/* ============================================
+   LYRICS MODAL
+   ============================================ */
+window.openLyrics = function () {
+    document.getElementById('lyrics-overlay').classList.add('open');
+};
+window.closeLyrics = function () {
+    document.getElementById('lyrics-overlay').classList.remove('open');
+};
+window.closeLyricsOnBg = function (e) {
+    if (e.target === document.getElementById('lyrics-overlay')) closeLyrics();
+};
+// ESC key closes lyrics modal
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLyrics();
+});
+</script>
+
 </body>
 </html>
 
