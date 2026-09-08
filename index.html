@@ -2879,14 +2879,12 @@
                     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem;">
                         <div>
                             <div style="font-size:0.75rem; font-weight:800; color:var(--yellow); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; display:flex; align-items:center; gap:0.3rem;">
-                                <i class="fa-solid fa-star"></i> Video Iklan &amp; Profil Utama
+                                <i class="fa-solid fa-star"></i> Video Bimbel TPQ Plus Bintang Rabbani
                             </div>
                             <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:800; color:white;">
                                 Video Profil Utama TPQ Plus Bintang Rabbani
                             </div>
-                            <div style="font-size:0.78rem; color:rgba(255,255,255,0.85); margin-top:0.2rem;">
-                                Tonton langsung tanpa unduh &amp; bagikan link preview ke calon wali santri / mitra cabang.
-                            </div>
+
                         </div>
                         <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
                             <button type="button" onclick="openModalVideoIklan()" class="btn-dl" style="background:linear-gradient(135deg,#00C853,#00E676); border-color:#B9F6CA; color:#0d3c00; font-weight:800; box-shadow:0 4px 14px rgba(0,200,83,0.4);" title="Tonton Video Tanpa Download">
@@ -3874,9 +3872,8 @@
                 </div>
                 <div>
                     <h3 style="font-family:var(--font-head); font-size:1.2rem; font-weight:800; color:white; margin:0; line-height:1.2;">
-                        🎬 Video Iklan &amp; Profil Utama — TPQ Plus Bintang Rabbani
+                        🎬 Video Bimbel TPQ Plus Bintang Rabbani
                     </h3>
-                    <p style="font-size:.76rem; color:rgba(255,255,255,0.8); margin:0;">Tonton langsung tanpa unduh &amp; bagikan link preview ke calon wali santri / mitra cabang</p>
                 </div>
             </div>
             <button type="button" onclick="closeModalVideoIklan()" style="background:rgba(255,255,255,0.15); border:none; font-size:1.5rem; cursor:pointer; color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;" title="Tutup Modal">&times;</button>
@@ -6333,10 +6330,20 @@ function closeModalVideoIklan() {
     const player = document.getElementById('playerVideoIklan');
     if (player) {
         player.pause();
+        player.currentTime = 0; // reset video ke awal
     }
     if (modal) {
         modal.classList.remove('open');
     }
+    // Setelah modal ditutup, bawa pengunjung ke halaman pertama (hero section)
+    setTimeout(() => {
+        const hero = document.getElementById('hero');
+        if (hero) {
+            hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, 150); // delay agar animasi tutup modal selesai dulu
 }
 function copyLinkVideoIklan() {
     const shareUrl = window.location.origin + window.location.pathname + '?watch=video-iklan#toolkit';
@@ -6351,13 +6358,19 @@ function copyLinkVideoIklan() {
     }
 }
 
-// Auto open video iklan modal on load if URL contains ?watch=video-iklan or #video-iklan
+// Auto open video iklan modal on load (tanpa scroll ke toolkit, agar halaman tetap di atas)
 window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('watch') === 'video-iklan' || window.location.hash === '#video-iklan') {
+        // Buka dari URL eksternal (link share) — tetap buka modal, scroll ke hero dulu
         setTimeout(() => {
-            const el = document.getElementById('toolkit');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'instant' }); // pastikan posisi di atas
+            openModalVideoIklan();
+        }, 400);
+    } else {
+        // Buka normal (tanpa parameter URL) — tetap auto-open video sesuai pengaturan sebelumnya
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' }); // pastikan posisi di atas
             openModalVideoIklan();
         }, 400);
     }
