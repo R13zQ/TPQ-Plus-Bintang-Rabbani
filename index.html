@@ -2266,14 +2266,16 @@
                 <li><a href="#kurikulum">Kurikulum</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#galeri">Galeri</a></li>
-                <li><a href="#jejak-bintang">Jejak Bintang</a></li>
+                <li><a href="#jejak-bintang" style="color:var(--orange);font-weight:800;" title="Buka Tools Kit & Brosur Download"><i class="fa-solid fa-toolbox"></i> Tools Kit</a></li>
                 <li><a href="#testimoni">Testimoni</a></li>
                 <li><a href="#daftar">Daftar</a></li>
-                <li><a href="#toolkit" style="color:var(--orange);font-weight:800;" title="Buka Tools Kit & Brosur Download"><i class="fa-solid fa-toolbox"></i> Tools Kit</a></li>
             </ul>
         </nav>
 
-        <div style="display:flex; align-items:center; gap:.75rem;">
+        <div style="display:flex; align-items:center; gap:.6rem;">
+            <button type="button" class="btn-admin-nav" style="background:linear-gradient(135deg,var(--dark),#283593);color:white;border:1.5px solid rgba(255,255,255,0.4);padding:.4rem .85rem;font-size:.78rem;border-radius:20px;display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;font-weight:800;box-shadow:0 3px 10px rgba(0,0,0,0.2);" onclick="openAdminPanel()" title="Akses Dashboard Admin Pusat">
+                <i class="fa-solid fa-crown" style="color:var(--yellow);"></i> Admin Pusat
+            </button>
             <a href="brosur-bintang-rabbani.html" target="_blank" class="btn-toolbar btn-print" style="text-decoration:none;padding:.4rem .9rem;font-size:.78rem;border-radius:20px;display:none;align-items:center;gap:.35rem;" id="nav-btn-brosur">
                 <i class="fa-solid fa-file-pdf"></i> Brosur PDF
             </a>
@@ -2293,10 +2295,10 @@
         <li><a href="#kurikulum">🎓 Kurikulum 4 Pilar</a></li>
         <li><a href="#roadmap">🗺️ Roadmap Belajar</a></li>
         <li><a href="#galeri">📸 Galeri</a></li>
-        <li><a href="#jejak-bintang">⭐ Jejak Bintang</a></li>
+        <li><a href="#jejak-bintang" style="color:var(--yellow);font-weight:800;"><i class="fa-solid fa-toolbox"></i> 🎒 Tools Kit Belajar &amp; Media Unduh</a></li>
         <li><a href="#testimoni">💬 Testimoni</a></li>
         <li><a href="#daftar">📝 Daftar</a></li>
-        <li><a href="#toolkit" style="color:var(--yellow);font-weight:800;"><i class="fa-solid fa-toolbox"></i> 🎒 Tools Kit &amp; Brosur PDF</a></li>
+        <li style="margin-top:.5rem;border-top:1px solid rgba(255,255,255,0.2);padding-top:.5rem;"><a href="javascript:void(0)" onclick="closeMobileMenu();openAdminPanel();" style="color:var(--yellow);font-weight:800;"><i class="fa-solid fa-crown"></i> 👑 Login Admin Pusat</a></li>
     </ul>
 </div>
 
@@ -2831,136 +2833,48 @@
 <section id="jejak-bintang">
     <div class="container">
         <div class="badge" style="display:flex;width:fit-content;margin:0 auto 1rem;background:rgba(255,214,0,.15);border-color:var(--yellow);color:var(--yellow);">
-            <i class="fa-solid fa-star"></i> Parent Portal Preview
+            <i class="fa-solid fa-toolbox"></i> Media Unduh &amp; Modul Pembelajaran
         </div>
-        <h2 class="section-title">⭐ Dashboard Jejak Bintang</h2>
-        <p class="section-sub">Pantau perkembangan putra-putri Anda secara terpadu dari majlis hingga ke rumah</p>
+        <h2 class="section-title" id="toolkit">🎒 Tools Kit Belajar &amp; Media Unduh</h2>
+        <p class="section-sub">Unduh brosur resmi, tonton video iklan profil, serta modul pendukung pembelajaran santri secara gratis.</p>
 
-        <div class="portal-wrapper fade-in">
-            <div class="portal-left">
-                <h3><i class="fa-solid fa-list-check"></i> Checklist Harian Santri</h3>
-                <div class="checklist-item checked" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">☀️ Sholat Subuh berjamaah</span>
-                </div>
-                <div class="checklist-item checked" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">📖 Iqro' / Mengaji bersama Ummi</span>
-                </div>
-                <div class="checklist-item" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">🕌 Sholat Dzuhur & Ashar</span>
-                </div>
-                <div class="checklist-item checked" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">🙏 Doa sebelum makan & tidur</span>
-                </div>
-                <div class="checklist-item" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">✏️ Latihan menulis hijaiyah di rumah</span>
-                </div>
-                <div class="checklist-item" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">👋 Mengucap salam saat masuk rumah</span>
-                </div>
-                <div class="checklist-item checked" onclick="toggleCheck(this)">
-                    <div class="check-box"><i class="fa-solid fa-check"></i></div>
-                    <span class="check-label">🌙 Sholat Maghrib & Isya bersama ayah</span>
-                </div>
-
-                <!-- Section Toolkit Download -->
-                <h3 id="toolkit" style="margin-top:2.5rem; display:flex; align-items:center; gap:0.5rem; font-family:var(--font-head); font-size:1.4rem; color:white;">
-                    <i class="fa-solid fa-toolbox" style="color:var(--yellow)"></i> 🎒 Tools Kit Belajar &amp; Media Unduh
-                </h3>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); margin-bottom:1rem;">Unduh brosur resmi, tonton video iklan profil, serta modul pendukung pembelajaran santri secara gratis.</p>
-
-                <!-- FEATURED VIDEO IKLAN BANNER IN TOOLKIT -->
-                <div style="background:linear-gradient(135deg, rgba(255,107,53,0.18), rgba(21,101,192,0.3)); border:2px solid rgba(255,214,0,0.45); border-radius:16px; padding:1.2rem; margin-bottom:1.2rem; backdrop-filter:blur(6px); box-shadow:0 6px 20px rgba(0,0,0,0.25);">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem;">
-                        <div>
-                            <div style="font-size:0.75rem; font-weight:800; color:var(--yellow); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; display:flex; align-items:center; gap:0.3rem;">
-                                <i class="fa-solid fa-star"></i> Video Bimbel TPQ Plus Bintang Rabbani
-                            </div>
-                            <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:800; color:white;">
-                                Video Profil Utama TPQ Plus Bintang Rabbani
-                            </div>
-
+        <div class="portal-wrapper fade-in" style="display:block; max-width:960px; margin:0 auto;">
+            <!-- FEATURED VIDEO IKLAN BANNER IN TOOLKIT -->
+            <div style="background:linear-gradient(135deg, rgba(255,107,53,0.18), rgba(21,101,192,0.3)); border:2px solid rgba(255,214,0,0.45); border-radius:16px; padding:1.4rem; margin-bottom:1.5rem; backdrop-filter:blur(6px); box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem;">
+                    <div>
+                        <div style="font-size:0.75rem; font-weight:800; color:var(--yellow); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; display:flex; align-items:center; gap:0.3rem;">
+                            <i class="fa-solid fa-star"></i> Video Bimbel TPQ Plus Bintang Rabbani
                         </div>
-                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                            <button type="button" onclick="openModalVideoIklan()" class="btn-dl" style="background:linear-gradient(135deg,#00C853,#00E676); border-color:#B9F6CA; color:#0d3c00; font-weight:800; box-shadow:0 4px 14px rgba(0,200,83,0.4);" title="Tonton Video Tanpa Download">
-                                <i class="fa-solid fa-circle-play"></i> Review / Tonton Video
-                            </button>
-                            <a href="video_iklan_utama.mp4" download="Video_Iklan_Utama_TPQ_Plus_Bintang_Rabbani.mp4" class="btn-dl" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.4); color:white; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem;" title="Unduh File Video ke Device">
-                                <i class="fa-solid fa-download"></i> Unduh Video (MP4)
-                            </a>
+                        <div style="font-family:var(--font-head); font-size:1.15rem; font-weight:800; color:white;">
+                            Video Profil Utama TPQ Plus Bintang Rabbani
                         </div>
                     </div>
-                </div>
-
-                <div class="download-btns" style="margin-top:0.5rem;">
-                    <button onclick="openModalBrosur()" class="btn-dl" style="background:linear-gradient(135deg,var(--orange),#E65100);border-color:var(--yellow);color:white;font-weight:800;box-shadow:0 4px 14px rgba(255,107,53,0.35);" title="Buka Review &amp; Unduh Brosur PDF">
-                        <i class="fa-solid fa-file-pdf"></i> Download Brosur Resmi (PDF 1 Lembar)
-                    </button>
-                    <button class="btn-dl" onclick="alertDownload('Modul Mewarnai Hijaiyah')">
-                        <i class="fa-solid fa-download"></i> Modul Mewarnai
-                    </button>
-                    <button class="btn-dl" onclick="alertDownload('Lembar Kerja Calistung')">
-                        <i class="fa-solid fa-file-pdf"></i> LK Calistung
-                    </button>
-                    <button class="btn-dl" onclick="alertDownload('Jurnal Ibadah Harian')">
-                        <i class="fa-solid fa-journal-whills"></i> Jurnal Ibadah
-                    </button>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <button type="button" onclick="openModalVideoIklan()" class="btn-dl" style="background:linear-gradient(135deg,#00C853,#00E676); border-color:#B9F6CA; color:#0d3c00; font-weight:800; box-shadow:0 4px 14px rgba(0,200,83,0.4);" title="Tonton Video Tanpa Download">
+                            <i class="fa-solid fa-circle-play"></i> Review / Tonton Video
+                        </button>
+                        <a href="video_iklan_utama.mp4" download="Video_Iklan_Utama_TPQ_Plus_Bintang_Rabbani.mp4" class="btn-dl" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.4); color:white; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem;" title="Unduh File Video ke Device">
+                            <i class="fa-solid fa-download"></i> Unduh Video (MP4)
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="portal-right">
-                <h3><i class="fa-solid fa-chart-line"></i> Pencapaian Per Pilar</h3>
-                <div class="progress-item">
-                    <div class="progress-header">
-                        <span>📖 Pilar 01: Tahsin & Calistung</span>
-                        <span class="progress-pct" style="color:var(--orange)">72%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill pf-1" data-width="72"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <div class="progress-header">
-                        <span>🕌 Pilar 02: Fiqih Ibadah</span>
-                        <span class="progress-pct" style="color:var(--green)">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill pf-2" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <div class="progress-header">
-                        <span>💎 Pilar 03: Akidah & Akhlak</span>
-                        <span class="progress-pct" style="color:var(--purple)">68%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill pf-3" data-width="68"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <div class="progress-header">
-                        <span>📊 Pilar 04: Evaluasi & Filantropi</span>
-                        <span class="progress-pct" style="color:var(--blue)">90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill pf-4" data-width="90"></div>
-                    </div>
-                </div>
-
-                <div style="margin-top:1.5rem;background:rgba(255,255,255,.1);border-radius:16px;padding:1.2rem;">
-                    <h4 style="color:var(--yellow);font-size:.9rem;margin-bottom:.75rem;"><i class="fa-solid fa-star"></i> Pencapaian Bulan Ini</h4>
-                    <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
-                        <span style="background:rgba(255,214,0,.2);border:1px solid rgba(255,214,0,.4);color:var(--yellow);border-radius:20px;padding:.25rem .75rem;font-size:.74rem;font-weight:700;">⭐ Hafal 15 Hijaiyah</span>
-                        <span style="background:rgba(0,200,150,.2);border:1px solid rgba(0,200,150,.4);color:#4FFFB0;border-radius:20px;padding:.25rem .75rem;font-size:.74rem;font-weight:700;">✅ Wudhu Mandiri</span>
-                        <span style="background:rgba(255,107,53,.2);border:1px solid rgba(255,107,53,.4);color:#FFA07A;border-radius:20px;padding:.25rem .75rem;font-size:.74rem;font-weight:700;">📚 Lancar Membaca</span>
-                        <span style="background:rgba(156,39,176,.2);border:1px solid rgba(156,39,176,.4);color:#CE93D8;border-radius:20px;padding:.25rem .75rem;font-size:.74rem;font-weight:700;">🕌 Hafal Gerakan Sholat</span>
-                    </div>
-                </div>
+            <!-- DOWNLOAD BUTTONS -->
+            <div class="download-btns" style="margin-top:0.5rem; justify-content:center;">
+                <button onclick="openModalBrosur()" class="btn-dl" style="background:linear-gradient(135deg,var(--orange),#E65100);border-color:var(--yellow);color:white;font-weight:800;box-shadow:0 4px 14px rgba(255,107,53,0.35);" title="Buka Review &amp; Unduh Brosur PDF">
+                    <i class="fa-solid fa-file-pdf"></i> Download Brosur Resmi (PDF 1 Lembar)
+                </button>
+                <button class="btn-dl" onclick="alertDownload('Modul Mewarnai Hijaiyah')">
+                    <i class="fa-solid fa-download"></i> Modul Mewarnai
+                </button>
+                <button class="btn-dl" onclick="alertDownload('Lembar Kerja Calistung')">
+                    <i class="fa-solid fa-file-pdf"></i> LK Calistung
+                </button>
+                <button class="btn-dl" onclick="alertDownload('Jurnal Ibadah Harian')">
+                    <i class="fa-solid fa-journal-whills"></i> Jurnal Ibadah
+                </button>
             </div>
         </div>
     </div>
@@ -3073,9 +2987,309 @@
                     </button>
                 </div>
 
+                <!-- KOTAK 3: RAPORT SANTRI -->
+                <div class="portal-choice-card" id="card-choice-raport"
+                     style="background:linear-gradient(135deg,rgba(156,39,176,0.12),rgba(255,64,129,0.12));border:2px solid rgba(156,39,176,0.35);cursor:pointer;"
+                     onclick="openPortalView('raport')">
+                    <div class="portal-card-icon">📊</div>
+                    <div class="portal-card-title" style="color:var(--purple);">Raport Santri</div>
+                    <div class="portal-card-desc">
+                        Lihat perkembangan belajar putra-putri Anda melalui Raport Santri digital. Login menggunakan <strong>NIS</strong> dan <strong>Password</strong> yang diberikan saat pendaftaran.
+                    </div>
+                    <button type="button" class="btn-portal-trigger" onclick="event.stopPropagation(); openPortalView('raport')"
+                            style="background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 4px 14px rgba(156,39,176,0.4);">
+                        <i class="fa-solid fa-chart-line"></i> Lihat Raport Santri ▾
+                    </button>
+                </div>
+
             </div>
         </div>
 
+
+        <!-- ====================================================
+             EXPANDED VIEW 3: RAPORT SANTRI (LOGIN + TAMPILAN)
+             ==================================================== -->
+        <div class="portal-expanded-container" id="portal-container-raport">
+
+            <div class="expanded-head-nav">
+                <div style="display:flex;align-items:center;gap:.6rem;">
+                    <span style="font-size:1.4rem;">📊</span>
+                    <div>
+                        <strong style="font-family:var(--font-head);font-size:1.05rem;color:var(--dark);">Raport Santri Digital</strong>
+                        <div style="font-size:.74rem;color:#78909c;">Login dengan NIS dan Password untuk melihat perkembangan santri</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-back-hub" onclick="closePortalView()">
+                    <i class="fa-solid fa-arrow-left"></i> Tutup Raport
+                </button>
+            </div>
+
+            <!-- LOGIN FORM RAPORT -->
+            <div id="raport-login-section" class="main-portal-box" style="max-width:480px;margin:0 auto;">
+                <div class="santri-card" style="border-top-color:var(--purple);">
+                    <div class="santri-card-header">
+                        <div class="santri-card-num" style="background:linear-gradient(135deg,var(--purple),var(--pink));">🔐</div>
+                        <div>
+                            <div class="santri-card-title">Login Raport Santri</div>
+                            <div class="santri-card-sub">Masukkan NIS dan Password yang diterima saat pendaftaran</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:1rem;">
+                        <label style="font-size:.82rem;font-weight:700;color:var(--dark);display:block;margin-bottom:.4rem;">
+                            Nomor Induk Santri (NIS) <span style="color:var(--pink)">*</span>
+                        </label>
+                        <input type="text" id="raport-nis-input"
+                               placeholder="Contoh: 001001"
+                               maxlength="6"
+                               style="width:100%;padding:.75rem 1rem;border:2px solid #e0e0e0;border-radius:12px;font-family:monospace;font-size:1.1rem;font-weight:700;outline:none;letter-spacing:2px;"
+                               oninput="this.value=this.value.replace(/\D/g,'')"
+                               onkeydown="if(event.key==='Enter') doRaportLogin()">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:1.5rem;">
+                        <label style="font-size:.82rem;font-weight:700;color:var(--dark);display:block;margin-bottom:.4rem;">
+                            Password <span style="color:var(--pink)">*</span>
+                        </label>
+                        <div style="position:relative;">
+                            <input type="password" id="raport-pass-input"
+                                   placeholder="6 digit password"
+                                   maxlength="6"
+                                   style="width:100%;padding:.75rem 3rem .75rem 1rem;border:2px solid #e0e0e0;border-radius:12px;font-family:monospace;font-size:1.1rem;font-weight:700;outline:none;letter-spacing:3px;"
+                                   oninput="this.value=this.value.replace(/\D/g,'')"
+                                   onkeydown="if(event.key==='Enter') doRaportLogin()">
+                            <button type="button" onclick="toggleRaportPassVis()"
+                                    style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#78909c;font-size:1rem;"
+                                    id="raport-pass-eye" title="Tampilkan/Sembunyikan Password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="raport-login-error" style="display:none;background:#FFEBEE;border:1px solid #FFCDD2;border-radius:10px;padding:.6rem .9rem;margin-bottom:1rem;font-size:.82rem;color:#C62828;">
+                        ❌ NIS atau Password tidak sesuai. Periksa kembali atau hubungi admin.
+                    </div>
+
+                    <button type="button" onclick="doRaportLogin()"
+                            style="width:100%;padding:.9rem;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;border:none;font-family:var(--font-head);font-size:1rem;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(156,39,176,0.4);display:flex;align-items:center;justify-content:center;gap:.5rem;">
+                        <i class="fa-solid fa-right-to-bracket"></i> Masuk & Lihat Raport
+                    </button>
+
+                    <p style="font-size:.72rem;color:#78909c;text-align:center;margin-top:.8rem;">
+                        🔒 Lupa NIS/Password? Hubungi admin atau ustadzah di cabang Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TAMPILAN RAPORT SETELAH LOGIN -->
+            <div id="raport-view-section" style="display:none;">
+
+                <div style="background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:20px;padding:1.5rem 2rem;margin-bottom:1.5rem;color:white;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                    <div>
+                        <div style="font-size:.75rem;font-weight:800;letter-spacing:1px;opacity:.8;margin-bottom:.25rem;">RAPORT DIGITAL — TPQ PLUS BINTANG RABBANI</div>
+                        <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:900;" id="raport-nama-santri">—</div>
+                        <div style="font-size:.82rem;opacity:.85;margin-top:.25rem;">
+                            NIS: <span style="font-family:monospace;font-weight:700;" id="raport-display-nis">—</span>
+                            &nbsp;|&nbsp; Cabang: <span id="raport-display-cabang">—</span>
+                        </div>
+                    </div>
+                    <button type="button" onclick="doRaportLogout()"
+                            style="background:rgba(255,255,255,0.2);border:1.5px solid rgba(255,255,255,0.5);color:white;border-radius:10px;padding:.5rem 1rem;font-weight:700;cursor:pointer;font-size:.82rem;">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
+
+                <!-- METADATA & PENANGGUNG JAWAB AUTOMATIC FROM DATABASE -->
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                    <div style="background:white;border-radius:14px;padding:1rem 1.2rem;box-shadow:0 3px 12px rgba(0,0,0,.08);border-left:4px solid var(--blue);">
+                        <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;margin-bottom:.25rem;">Orang Tua / Wali Santri</div>
+                        <div style="font-size:1rem;font-weight:800;color:var(--dark);" id="raport-display-wali">—</div>
+                        <div style="font-size:.72rem;color:#78909c;margin-top:.2rem;" id="raport-display-wa-wali">WA: —</div>
+                    </div>
+                    <div style="background:white;border-radius:14px;padding:1rem 1.2rem;box-shadow:0 3px 12px rgba(0,0,0,.08);border-left:4px solid var(--green);">
+                        <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;margin-bottom:.25rem;">Guru Pembimbing / Ustadzah</div>
+                        <div style="font-size:1rem;font-weight:800;color:var(--dark);" id="raport-display-ustadzah">—</div>
+                        <div style="font-size:.72rem;color:#78909c;margin-top:.2rem;">Pengelola Cabang</div>
+                    </div>
+                    <div style="background:white;border-radius:14px;padding:1rem 1.2rem;box-shadow:0 3px 12px rgba(0,0,0,.08);border-left:4px solid var(--orange);">
+                        <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;margin-bottom:.25rem;">Kepala Bimbel TPQ Plus</div>
+                        <div style="font-size:1rem;font-weight:800;color:var(--dark);">Ustadz Rizki Zulkarnain</div>
+                        <div style="font-size:.72rem;color:#78909c;margin-top:.2rem;">Pusat TPQ Plus Bintang Rabbani</div>
+                    </div>
+                    <div style="background:white;border-radius:14px;padding:1rem 1.2rem;box-shadow:0 3px 12px rgba(0,0,0,.08);border-left:4px solid var(--purple);">
+                        <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;margin-bottom:.25rem;">Kelompok Usia & Program</div>
+                        <div style="font-size:1rem;font-weight:800;color:var(--dark);" id="raport-display-program">—</div>
+                        <div style="font-size:.72rem;color:#78909c;margin-top:.2rem;" id="raport-display-usia-detail">Usia: —</div>
+                    </div>
+                </div>
+
+                <!-- DISPLAY CAPAIAN HAFALAN & KELOMPOK USIA (READ-ONLY LAPORAN SANTRI DIGITAL) -->
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-bottom:1.5rem;">
+                    <!-- CARD 1: STATUS KELOMPOK USIA -->
+                    <div class="santri-card" style="border-top-color:var(--purple);margin-bottom:0;background:#FAF5FF;">
+                        <div class="santri-card-header" style="margin-bottom:.8rem;">
+                            <div class="santri-card-num" style="background:linear-gradient(135deg,var(--purple),var(--pink));">🧒</div>
+                            <div>
+                                <div class="santri-card-title">Kelompok Usia Kurikulum Raport</div>
+                                <div class="santri-card-sub">Terkoneksi langsung dari Data Isian Raport Guru Cabang</div>
+                            </div>
+                        </div>
+
+                        <div style="background:white;padding:.9rem 1.1rem;border-radius:14px;border:2px solid #e1bee7;">
+                            <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;">RENTANG USIA KURIKULUM:</div>
+                            <div style="font-size:1.1rem;font-weight:900;color:var(--purple);margin-top:.15rem;" id="raport-usia-active-title">Rentang Usia 6 – 12 Tahun (SD)</div>
+                            <div style="font-size:.75rem;color:var(--purple);font-weight:700;margin-top:.15rem;" id="raport-usia-active-sub">Matriks 4 Pilar SD Terbuka Lengkap</div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: CAPAIAN HAFALAN (DOA HARIAN USIA 3-6 / SURAH TERAKHIR USIA 6-12) -->
+                    <div class="santri-card" style="border-top-color:var(--blue);margin-bottom:0;background:#F4F8FB;">
+                        <div class="santri-card-header" style="margin-bottom:.8rem;">
+                            <div class="santri-card-num" style="background:linear-gradient(135deg,var(--blue),var(--teal));">📖</div>
+                            <div>
+                                <div class="santri-card-title" id="raport-hafalan-card-title">Capaian Hafalan Santri</div>
+                                <div class="santri-card-sub" id="raport-hafalan-card-sub">Laporan Capaian Hafalan Berdasarkan Isian Raport Guru</div>
+                            </div>
+                        </div>
+
+                        <div style="background:white;padding:.9rem 1.1rem;border-radius:14px;border:2px solid #b0bec5;" id="raport-hafalan-display-box">
+                            <div style="font-size:.7rem;color:#78909c;font-weight:700;">HAFALAN SANTRI DALAM RAPORT:</div>
+                            <div style="font-size:1.05rem;font-weight:900;color:var(--blue);margin-top:.15rem;" id="raport-surah-terakhir-title">Surah An-Nas (Surah Ke-114)</div>
+                            <div style="font-size:.72rem;color:var(--green);font-weight:700;margin-top:.1rem;" id="raport-surah-status">Status: Lulus & Fast-Hafizh ⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGRESS 4 PILAR -->
+                <div class="santri-card" style="border-top-color:var(--purple);margin-bottom:1.5rem;">
+                    <div class="santri-card-header">
+                        <div class="santri-card-num" style="background:linear-gradient(135deg,var(--purple),var(--pink));">📈</div>
+                        <div>
+                            <div class="santri-card-title">Pencapaian 4 Pilar Kurikulum</div>
+                            <div class="santri-card-sub">Perkembangan belajar santri per triwulan berdasarkan kelompok usia</div>
+                        </div>
+                    </div>
+
+                    <div id="raport-pilar-section">
+                        <!-- Auto rendered by renderDetailedRaportPillars JS -->
+                    </div>
+                </div>
+
+                <!-- STANDAR SKALA PREDIKAT & RUBRIK PENILAIAN AKHIR 7 SKALA -->
+                <div class="santri-card" style="border-top-color:var(--orange);margin-bottom:1.5rem;background:#FFFBF0;">
+                    <div class="santri-card-header" style="margin-bottom:1rem;">
+                        <div class="santri-card-num" style="background:linear-gradient(135deg,var(--orange),var(--yellow));">📊</div>
+                        <div>
+                            <div class="santri-card-title">Standar Skala Predikat & Rubrik Penilaian Akhir (7 Skala)</div>
+                            <div class="santri-card-sub">Akumulasi rata-rata nilai detail dari keseluruhan data raport (Untuk Kedua Rentang Usia 3-6 & 6-12 Tahun)</div>
+                        </div>
+                    </div>
+
+                    <!-- SUMMARY AKUMULASI NILAI -->
+                    <div style="background:white;border-radius:14px;padding:1.2rem;margin-bottom:1.2rem;border:2px solid #FFE082;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+                        <div>
+                            <div style="font-size:.78rem;color:#78909c;font-weight:700;text-transform:uppercase;">Akumulasi Rata-Rata Nilai Detail Raport</div>
+                            <div style="font-size:1.8rem;font-weight:900;color:var(--dark);" id="raport-overall-avg-val">0.00 / 100</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:1.1rem;letter-spacing:2px;" id="raport-overall-stars-val">⭐⭐⭐⭐⭐⭐⭐</div>
+                            <span id="raport-overall-badge-val" style="display:inline-block;font-size:.85rem;font-weight:900;padding:.3rem .8rem;border-radius:12px;background:rgba(255,107,53,0.15);color:var(--orange);margin-top:.3rem;">
+                                A+ — Mumtaz Murtafi' (Istimewa)
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- TABEL RUBRIK 7 SKALA UNTUK KEDUA RENTANG USIA -->
+                    <div style="overflow-x:auto;border-radius:12px;border:1px solid #FFE082;background:white;">
+                        <table style="width:100%;border-collapse:collapse;font-size:.8rem;text-align:left;">
+                            <thead>
+                                <tr style="background:#FFF8E1;color:#E65100;font-weight:800;border-bottom:2px solid #FFE082;">
+                                    <th style="padding:.7rem .8rem;text-align:center;">Skala Bintang</th>
+                                    <th style="padding:.7rem .8rem;text-align:center;">Rentang Nilai</th>
+                                    <th style="padding:.7rem .8rem;text-align:center;">Kode</th>
+                                    <th style="padding:.7rem .8rem;">Predikat (Istilah Syariah)</th>
+                                    <th style="padding:.7rem .8rem;">Keterangan Standar (Kedua Usia 3-6 & 6-12 Tahun)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid #FFF3E0;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐⭐⭐⭐⭐⭐</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#2E7D32;">95 – 100</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#2E7D32;">A+</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#1B5E20;">Mumtaz Murtafi'</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Capaian Istimewa (Sangat Menonjol pada Ilmu Agama & Umum/PR)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #FFF3E0;background:#FAFAFA;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐⭐⭐⭐⭐☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#2E7D32;">90 – 94</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#2E7D32;">A</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#1B5E20;">Mumtaz</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Sangat Baik (Menguasai Seluruh Indikator & Mandiri)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #FFF3E0;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐⭐⭐⭐☆☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#1565C0;">83 – 89</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#1565C0;">B+</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#0D47A1;">Jayyid Jiddan</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Baik Sekali (Progres Pembiasaan Rapi, Konsisten & Disiplin)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #FFF3E0;background:#FAFAFA;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐⭐⭐☆☆☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#1565C0;">76 – 82</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#1565C0;">B</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#0D47A1;">Jayyid</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Baik (Mencapai Standar Kelulusan Kurikulum)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #FFF3E0;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐⭐☆☆☆☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#E65100;">70 – 75</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#E65100;">C+</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#EF6C00;">Maqbul Murtafi'</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Cukup Baik (Perlu Tambahan Latihan Rutin di Rumah)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #FFF3E0;background:#FAFAFA;">
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐⭐☆☆☆☆☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#E65100;">63 – 69</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#E65100;">C</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#EF6C00;">Maqbul</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Cukup (Memerlukan Pendampingan Ekstra Ustadzah)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;">⭐☆☆☆☆☆☆</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:#C62828;">&lt; 63</td>
+                                    <td style="padding:.6rem .8rem;text-align:center;font-weight:900;color:#C62828;">D</td>
+                                    <td style="padding:.6rem .8rem;font-weight:700;color:#B71C1C;">Perlu Bimbingan</td>
+                                    <td style="padding:.6rem .8rem;color:#424242;">Bimbingan Khusus Bersama Orang Tua & Guru Cabang</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CATATAN USTADZAH -->
+                <div class="santri-card" style="border-top-color:var(--yellow);margin-bottom:1.5rem;">
+                    <div class="santri-card-header">
+                        <div class="santri-card-num" style="background:linear-gradient(135deg,var(--yellow),var(--orange));">📝</div>
+                        <div>
+                            <div class="santri-card-title">Catatan Perkembangan dari Ustadzah</div>
+                            <div class="santri-card-sub">Evaluasi pribadi dan rekomendasi untuk orang tua</div>
+                        </div>
+                    </div>
+                    <div id="raport-catatan-ustadzah" style="background:#FFFDE7;border-radius:12px;padding:1rem 1.2rem;font-size:.88rem;color:#37474f;line-height:1.7;border-left:4px solid var(--yellow);">
+                        —
+                    </div>
+                </div>
+
+                <!-- KETERANGAN VALIDASI OTOMATIS (TANPA TANDA TANGAN MANUAL) -->
+                <div style="background:#E8F5E9;border:2px solid #81C784;border-radius:16px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                    <div style="font-size:2rem;color:#2E7D32;">🛡️</div>
+                    <div style="font-size:.85rem;color:#1B5E20;line-height:1.6;">
+                        <strong>Informasi Keabsahan Raport Digital:</strong><br>
+                        Raport ini dibuat tidak membutuhkan tanda tangan manual, karena sudah tercatat secara otomatis di dalam sistem database TPQ Plus Bintang Rabbani Pusat & Cabang.
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- ====================================================
              EXPANDED VIEW 1: FORMULIR PENDAFTARAN SANTRI BARU
@@ -3430,6 +3644,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>NIS</th>
+                                        <th>PASSWORD</th>
                                         <th>NAMA LENGKAP SANTRI</th>
                                         <th>USIA</th>
                                         <th>JENIS KELAMIN</th>
@@ -3442,7 +3657,7 @@
                                 </thead>
                                 <tbody id="tbody-daftar-santri-cabang">
                                     <tr>
-                                        <td colspan="10" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri awal ditambahkan. Klik tombol <strong>"+ Tambah Santri Aktif"</strong> di atas.</td>
+                                        <td colspan="11" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri awal ditambahkan. Klik tombol <strong>"+ Tambah Santri Aktif"</strong> di atas.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -3561,6 +3776,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>NIS</th>
+                                            <th>PASSWORD RAPORT</th>
                                             <th>NAMA LENGKAP SANTRI</th>
                                             <th>USIA</th>
                                             <th>JENIS KELAMIN</th>
@@ -3651,6 +3867,337 @@
             </button>
             <button type="button" class="btn-submit-main" style="background:#e0e0e0;color:#37474f;" onclick="closeModalTambahSantriCabang()">
                 Batal
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MODAL INPUT RAPORT SANTRI (HAK PREROGATIF GURU CABANG)
+     ========================================== -->
+<div class="custom-modal-overlay" id="modalInputRaportCabang" style="z-index:999999;">
+    <div class="custom-modal-card" style="max-width:680px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+            <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:900;color:var(--dark);">
+                📝 Header Pengisian Raport Santri
+            </h3>
+            <span id="modal-raport-badge-nis" style="background:#F3E5F5;color:var(--purple);font-family:monospace;font-weight:800;padding:.25rem .6rem;border-radius:8px;font-size:.85rem;">NIS: —</span>
+        </div>
+        <p style="font-size:.78rem;color:#78909c;margin-bottom:1rem;">
+            👑 <strong>Hak Prerogatif Guru Cabang:</strong> Pengisian dan penilaian raport santri disimpan secara langsung tanpa memerlukan persetujuan/approval dari Admin Pusat. Hasil penilaian langsung terhubung ke database dan dapat dilihat oleh Orang Tua.
+        </p>
+
+        <input type="hidden" id="modal-raport-nis">
+
+        <div style="background:#F5F5F5;border-radius:12px;padding:1rem;margin-bottom:1.2rem;">
+            <div style="font-size:.85rem;font-weight:800;color:var(--dark);margin-bottom:.2rem;" id="modal-raport-nama-santri">Nama Santri: —</div>
+            <div style="font-size:.78rem;color:#546e7a;" id="modal-raport-detail-santri">Cabang: — | Wali: —</div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="flex:1;">
+                <label>Kelompok Usia Santri <span style="color:var(--pink)">*</span></label>
+                <select id="modal-raport-kelompok-usia" onchange="onKelompokUsiaChange()" style="width:100%;padding:.7rem 1rem;border:2px solid #e0e0e0;border-radius:12px;outline:none;font-weight:700;">
+                    <option value="3-6">Rentang Usia 3 – 6 Tahun (PAUD / TK / Pra-SD)</option>
+                    <option value="6-12" selected>Rentang Usia 6 – 12 Tahun (SD / Sekolah Dasar)</option>
+                </select>
+            </div>
+            <div class="form-group" id="modal-container-surah-terakhir" style="flex:1;">
+                <label>Hafalan Surah Terakhir (An-Nas s/d An-Naba) <span style="color:var(--pink)">*</span></label>
+                <select id="modal-raport-surah-terakhir" style="width:100%;padding:.7rem 1rem;border:2px solid #e0e0e0;border-radius:12px;outline:none;font-weight:700;">
+                    <!-- Auto-populated via JS -->
+                </select>
+            </div>
+        </div>
+
+        <!-- CONTAINER CHECKLIST DOA HARIAN (KHUSUS USIA 3-6 TAHUN) -->
+        <div id="modal-container-doa-harian" style="display:none;background:#F4FBF7;border:1.5px solid #A5D6A7;border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.2rem;">
+            <div style="font-size:.85rem;font-weight:800;color:#2E7D32;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;">
+                <i class="fa-solid fa-hands-praying"></i> Ceklis Hafalan Doa-Doa Harian Usia Dini (3 – 6 Tahun):
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.5rem;">
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-1" value="Doa Sebelum & Sesudah Makan"> Doa Sebelum & Sesudah Makan
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-2" value="Doa Sebelum & Bangun Tidur"> Doa Sebelum & Bangun Tidur
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-3" value="Doa Untuk Kedua Orang Tua"> Doa Untuk Kedua Orang Tua
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-4" value="Doa Kebaikan Dunia & Akhirat"> Doa Kebaikan Dunia & Akhirat
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-5" value="Doa Sebelum Belajar"> Doa Sebelum Belajar
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-6" value="Doa Masuk & Keluar Kamar Mandi"> Doa Masuk & Keluar Kamar Mandi
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-7" value="Doa Masuk & Keluar Masjid"> Doa Masuk & Keluar Masjid
+                </label>
+                <label style="font-size:.78rem;font-weight:700;color:#1B5E20;display:flex;align-items:center;gap:.4rem;cursor:pointer;background:white;padding:.4rem .7rem;border-radius:8px;border:1px solid #C8E6C9;">
+                    <input type="checkbox" id="doa-8" value="Doa Naik Kendaraan & Bepergian"> Doa Naik Kendaraan & Bepergian
+                </label>
+            </div>
+        </div>
+
+        <!-- FORM SCORE 4 PILAR DETAILED -->
+        <div style="background:#FAF9FE;border:1.5px solid #E1BEE7;border-radius:14px;padding:1.2rem;margin-bottom:1.2rem;max-height:480px;overflow-y:auto;">
+            <div style="font-weight:800;font-size:.92rem;color:var(--purple);margin-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.4rem;">
+                <span><i class="fa-solid fa-sliders"></i> Detail Form Penilaian Sub-Indikator 4 Pilar (0 – 100)</span>
+                <span style="font-size:.72rem;background:var(--purple);color:white;padding:.2rem .6rem;border-radius:10px;font-weight:700;">Skala 7 Bintang</span>
+            </div>
+
+            <!-- Hidden summary inputs for backwards compatibility -->
+            <input type="hidden" id="modal-raport-p1">
+            <input type="hidden" id="modal-raport-p2">
+            <input type="hidden" id="modal-raport-p3">
+            <input type="hidden" id="modal-raport-p4">
+
+            <!-- PILAR 01 -->
+            <div style="background:white;border-radius:12px;padding:1rem;margin-bottom:1rem;border-left:4px solid var(--orange);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;">
+                    <div style="font-weight:800;font-size:.85rem;color:var(--dark);">📖 Pilar 01: Tahsin, Tartil & Calistung Lanjutan (PR Sekolah)</div>
+                    <div style="font-size:.75rem;font-weight:800;color:var(--orange);" id="modal-p1-avg-label">Rata-rata: 0</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.6rem;">
+                    <div style="background:#FAF9FE;padding:.5rem .75rem;border-radius:8px;border:1px solid #ede7f6;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;">1.1 Kelancaran & Ketepatan Makhorijul Huruf (Agama)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-1" min="0" max="100" placeholder="85" style="width:70px;padding:.3rem .5rem;border:1.5px solid #d1c4e9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-1" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#FAF9FE;padding:.5rem .75rem;border-radius:8px;border:1px solid #ede7f6;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;">1.2 Matang Tajwid & Idgham (Agama)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-2" min="0" max="100" placeholder="84" style="width:70px;padding:.3rem .5rem;border:1.5px solid #d1c4e9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-2" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#FAF9FE;padding:.5rem .75rem;border-radius:8px;border:1px solid #ede7f6;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;">1.3 Keindahan & Kerapian Khat Hijaiyah (Agama)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-3" min="0" max="100" placeholder="86" style="width:70px;padding:.3rem .5rem;border:1.5px solid #d1c4e9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-3" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#FFF3E0;padding:.5rem .75rem;border-radius:8px;border:1px solid #ffe0b2;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#e65100;">1.4 Kedisiplinan PR Sekolah Tepat Waktu (Umum)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-4" min="0" max="100" placeholder="85" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ffcc80;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-4" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#FFF3E0;padding:.5rem .75rem;border-radius:8px;border:1px solid #ffe0b2;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#e65100;">1.5 Pemahaman Kebenaran Jawaban PR (Umum)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-5" min="0" max="100" placeholder="88" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ffcc80;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-5" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#FFF3E0;padding:.5rem .75rem;border-radius:8px;border:1px solid #ffe0b2;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#e65100;">1.6 Kerapian & Kebersihan Buku PR (Umum)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-1-6" min="0" max="100" placeholder="83" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ffcc80;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-1-6" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILAR 02 -->
+            <div style="background:white;border-radius:12px;padding:1rem;margin-bottom:1rem;border-left:4px solid var(--green);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;">
+                    <div style="font-weight:800;font-size:.85rem;color:var(--dark);">🕌 Pilar 02: Fiqih Ibadah & Praktik Harian</div>
+                    <div style="font-size:.75rem;font-weight:800;color:var(--green);" id="modal-p2-avg-label">Rata-rata: 0</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.6rem;">
+                    <div style="background:#E8F5E9;padding:.5rem .75rem;border-radius:8px;border:1px solid #c8e6c9;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#2e7d32;">2.1 Gerakan & Bacaan Wudhu (Thaharah)</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-2-1" min="0" max="100" placeholder="79" style="width:70px;padding:.3rem .5rem;border:1.5px solid #a5d6a7;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-2-1" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E8F5E9;padding:.5rem .75rem;border-radius:8px;border:1px solid #c8e6c9;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#2e7d32;">2.2 Hafalan Sholat 5 Waktu + Sunnah</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-2-2" min="0" max="100" placeholder="80" style="width:70px;padding:.3rem .5rem;border:1.5px solid #a5d6a7;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-2-2" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E8F5E9;padding:.5rem .75rem;border-radius:8px;border:1px solid #c8e6c9;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#2e7d32;">2.3 Praktik Zikir & Doa Setelah Sholat</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-2-3" min="0" max="100" placeholder="77" style="width:70px;padding:.3rem .5rem;border:1.5px solid #a5d6a7;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-2-3" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E8F5E9;padding:.5rem .75rem;border-radius:8px;border:1px solid #c8e6c9;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#2e7d32;">2.4 Adab Busana & Menjaga Kesucian</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-2-4" min="0" max="100" placeholder="78" style="width:70px;padding:.3rem .5rem;border:1.5px solid #a5d6a7;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-2-4" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E8F5E9;padding:.5rem .75rem;border-radius:8px;border:1px solid #c8e6c9;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#2e7d32;">2.5 Kedisiplinan Ibadah Mandiri</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-2-5" min="0" max="100" placeholder="76" style="width:70px;padding:.3rem .5rem;border:1.5px solid #a5d6a7;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-2-5" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILAR 03 -->
+            <div style="background:white;border-radius:12px;padding:1rem;margin-bottom:1rem;border-left:4px solid var(--purple);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;">
+                    <div style="font-weight:800;font-size:.85rem;color:var(--dark);">💎 Pilar 03: Akidah & Akhlakul Karimah</div>
+                    <div style="font-size:.75rem;font-weight:800;color:var(--purple);" id="modal-p3-avg-label">Rata-rata: 0</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.6rem;">
+                    <div style="background:#F3E5F5;padding:.5rem .75rem;border-radius:8px;border:1px solid #e1bee7;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#6a1b9a;">3.1 Rukun Iman/Islam & Asmaul Husna</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-3-1" min="0" max="100" placeholder="92" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ce93d8;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-3-1" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#F3E5F5;padding:.5rem .75rem;border-radius:8px;border:1px solid #e1bee7;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#6a1b9a;">3.2 Adab Terhadap Orang Tua & Guru</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-3-2" min="0" max="100" placeholder="91" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ce93d8;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-3-2" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#F3E5F5;padding:.5rem .75rem;border-radius:8px;border:1px solid #e1bee7;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#6a1b9a;">3.3 Kejujuran & Tanggung Jawab Harian</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-3-3" min="0" max="100" placeholder="90" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ce93d8;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-3-3" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#F3E5F5;padding:.5rem .75rem;border-radius:8px;border:1px solid #e1bee7;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#6a1b9a;">3.4 Kontrol Emosi & Bahasa Santun</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-3-4" min="0" max="100" placeholder="89" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ce93d8;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-3-4" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#F3E5F5;padding:.5rem .75rem;border-radius:8px;border:1px solid #e1bee7;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#6a1b9a;">3.5 Kebiasaan Infak & Sedekah Harian</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-3-5" min="0" max="100" placeholder="93" style="width:70px;padding:.3rem .5rem;border:1.5px solid #ce93d8;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-3-5" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILAR 04 -->
+            <div style="background:white;border-radius:12px;padding:1rem;margin-bottom:.5rem;border-left:4px solid var(--blue);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;">
+                    <div style="font-weight:800;font-size:.85rem;color:var(--dark);">🤝 Pilar 04: Kepedulian Sosial & Saling Membantu Teman</div>
+                    <div style="font-size:.75rem;font-weight:800;color:var(--blue);" id="modal-p4-avg-label">Rata-rata: 0</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.6rem;">
+                    <div style="background:#E3F2FD;padding:.5rem .75rem;border-radius:8px;border:1px solid #bbdefb;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#1565c0;">4.1 Membantu Teman Kesulitan Belajar</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-4-1" min="0" max="100" placeholder="73" style="width:70px;padding:.3rem .5rem;border:1.5px solid #90caf9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-4-1" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E3F2FD;padding:.5rem .75rem;border-radius:8px;border:1px solid #bbdefb;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#1565c0;">4.2 Sikap Dermawan & Suka Berbagi</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-4-2" min="0" max="100" placeholder="74" style="width:70px;padding:.3rem .5rem;border:1.5px solid #90caf9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-4-2" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E3F2FD;padding:.5rem .75rem;border-radius:8px;border:1px solid #bbdefb;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#1565c0;">4.3 Gotong Royong & Menjaga Kebersihan</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-4-3" min="0" max="100" placeholder="72" style="width:70px;padding:.3rem .5rem;border:1.5px solid #90caf9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-4-3" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E3F2FD;padding:.5rem .75rem;border-radius:8px;border:1px solid #bbdefb;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#1565c0;">4.4 Anti-Bullying & Menjaga Perasaan</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-4-4" min="0" max="100" placeholder="71" style="width:70px;padding:.3rem .5rem;border:1.5px solid #90caf9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-4-4" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                    <div style="background:#E3F2FD;padding:.5rem .75rem;border-radius:8px;border:1px solid #bbdefb;">
+                        <label style="font-size:.74rem;font-weight:700;display:block;margin-bottom:.2rem;color:#1565c0;">4.5 Inisiatif Kebaikan Lingkungan</label>
+                        <div style="display:flex;align-items:center;gap:.5rem;">
+                            <input type="number" id="sub-4-5" min="0" max="100" placeholder="73" style="width:70px;padding:.3rem .5rem;border:1.5px solid #90caf9;border-radius:8px;font-weight:800;font-size:.85rem;outline:none;" oninput="updateRubrik7Preview()">
+                            <span id="star-badge-4-5" style="font-size:.72rem;font-weight:700;color:#555;">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RUBRIK 7 SKALA PREDIKAT PREVIEW -->
+        <div style="background:#FFF8E1;border:1.5px solid #FFE082;border-radius:12px;padding:.9rem 1.2rem;margin-bottom:1.2rem;">
+            <div style="font-size:.78rem;font-weight:800;color:#F57F17;margin-bottom:.3rem;">
+                📊 PREDIKAT & RUBRIK PENILAIAN 7 SKALA (REAL-TIME PREVIEW):
+            </div>
+            <div style="font-size:.9rem;font-weight:900;color:#E65100;" id="raport-rubrik7-preview">
+                Rata-Rata: 81.25 | Predikat: B (Jayyid / Baik)
+            </div>
+            <div style="font-size:.7rem;color:#7f6e00;margin-top:.3rem;line-height:1.4;">
+                • 95-100: A+ (Mumtaz Murtafi') | • 90-94: A (Mumtaz) | • 83-89: B+ (Jayyid Jiddan) | • 76-82: B (Jayyid) | • 70-75: C+ (Maqbul Murtafi') | • 63-69: C (Maqbul) | • &lt;63: D (Perlu Bimbingan)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Catatan Perkembangan Pribadi dari Ustadzah <span style="color:var(--pink)">*</span></label>
+            <textarea id="modal-raport-catatan" rows="3" style="width:100%;padding:.75rem 1rem;border:2px solid #e0e0e0;border-radius:12px;outline:none;font-size:.88rem;" placeholder="Tuliskan apresiasi keunggulan santri, perkembangan hafalan, dan saran pendampingan untuk orang tua..."></textarea>
+        </div>
+
+        <div style="display:flex;gap:.8rem;margin-top:1.5rem;">
+            <button type="button" class="btn-submit-main" style="background:linear-gradient(135deg,var(--purple),var(--pink));" onclick="simpanRaportLangsungCabang()">
+                <i class="fa-solid fa-floppy-disk"></i> 💾 Simpan Raport Santri (Langsung Terhubung)
+            </button>
+            <button type="button" class="btn-submit-main" style="background:#e0e0e0;color:#37474f;" onclick="closeModalInputRaportCabang()">
+                Batal
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MODAL VIEW RAPORT SANTRI (MONITORING ADMIN PUSAT)
+     ========================================== -->
+<div class="custom-modal-overlay" id="modalViewRaportAdminPusat" style="z-index:999999;">
+    <div class="custom-modal-card" style="max-width:850px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;border-bottom:2px solid #f0f0f0;padding-bottom:.8rem;">
+            <div>
+                <h3 style="font-family:var(--font-head);font-size:1.25rem;font-weight:900;color:var(--dark);margin:0;">
+                    📊 Detail Raport Santri Digital (Admin Pusat)
+                </h3>
+                <span style="font-size:.76rem;color:#78909c;">Pusat Monitoring &amp; Verification Raport Santri Terintegrasi</span>
+            </div>
+            <button type="button" onclick="closeModalViewRaportAdminPusat()" style="background:#f1f5f9;border:none;width:36px;height:36px;border-radius:50%;font-weight:800;font-size:1.2rem;cursor:pointer;color:#64748b;">✕</button>
+        </div>
+
+        <div id="admin-view-raport-body">
+            <!-- Dynamic Raport Content Filled via JS -->
+        </div>
+
+        <div style="display:flex;gap:.8rem;margin-top:1.5rem;justify-content:flex-end;border-top:1px solid #e0e0e0;padding-top:1rem;">
+            <button type="button" class="btn-submit-main" style="background:var(--purple);color:white;width:auto;padding:.6rem 1.2rem;font-size:.85rem;" id="btn-admin-edit-raport-direct">
+                <i class="fa-solid fa-pen-to-square"></i> Edit Raport Santri (Prerogatif)
+            </button>
+            <button type="button" class="btn-submit-main" style="background:#e0e0e0;color:#37474f;width:auto;padding:.6rem 1.2rem;font-size:.85rem;" onclick="closeModalViewRaportAdminPusat()">
+                Tutup
             </button>
         </div>
     </div>
@@ -3930,7 +4477,7 @@
                     <li><a href="#kurikulum">🎓 Kurikulum 4 Pilar</a></li>
                     <li><a href="#roadmap">🗺️ Roadmap Belajar</a></li>
                     <li><a href="#galeri">📸 Galeri Kegiatan</a></li>
-                    <li><a href="#jejak-bintang">⭐ Jejak Bintang</a></li>
+                    <li><a href="#jejak-bintang">🎒 Tools Kit Belajar &amp; Media Unduh</a></li>
                     <li><a href="#testimoni">💬 Testimoni</a></li>
                     <li><a href="#daftar">📝 Portal Santri &amp; Cabang</a></li>
                 </ul>
@@ -3943,7 +4490,7 @@
                     <li><a href="#kurikulum">🕌 Pilar 02: Fiqih Ibadah</a></li>
                     <li><a href="#kurikulum">💎 Pilar 03: Akidah &amp; Akhlak</a></li>
                     <li><a href="#kurikulum">📊 Pilar 04: Evaluasi Bulanan</a></li>
-                    <li><a href="#jejak-bintang">⭐ Parent Portal</a></li>
+                    <li><a href="#jejak-bintang">🎒 Tools Kit Belajar</a></li>
                     <li><a href="#roadmap">🏆 Wisuda Santri</a></li>
                 </ul>
             </div>
@@ -4126,6 +4673,9 @@
                 <i class="fa-solid fa-bell"></i> 3. Permohonan Update Cabang
                 <span class="admin-badge-count" id="admin-requests-badge">0</span>
             </button>
+            <button type="button" class="admin-tab-btn" id="admin-tab-btn-raport" onclick="switchAdminTab('raport')">
+                <i class="fa-solid fa-chart-line"></i> 4. Monitoring Raport Santri Global
+            </button>
         </div>
 
         <div class="admin-content">
@@ -4149,6 +4699,7 @@
                                 <tr>
                                     <th>Foto</th>
                                     <th>NIS</th>
+                                    <th>Password Raport</th>
                                     <th>Nama Santri</th>
                                     <th>Usia</th>
                                     <th>JK</th>
@@ -4227,6 +4778,49 @@
                     <div class="admin-empty" id="adminRequestsEmpty" style="display:none;">
                         <div class="empty-icon">✅</div>
                         <p>Tidak ada permohonan update pending dari cabang saat ini.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANE 4: MONITORING RAPORT SANTRI GLOBAL -->
+            <div class="admin-pane" id="admin-pane-raport">
+                <div class="admin-table-wrap">
+                    <div class="admin-table-header">
+                        <h3>📊 Monitoring &amp; Status Raport Santri (Seluruh Cabang)</h3>
+                        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;">
+                            <select id="adminRaportFilterCabang" onchange="renderAdminRaportTable()" style="padding:.5rem .8rem;border:2px solid #e0e0e0;border-radius:10px;font-size:.82rem;outline:none;">
+                                <option value="">-- Semua Cabang --</option>
+                            </select>
+                            <select id="adminRaportFilterUsia" onchange="renderAdminRaportTable()" style="padding:.5rem .8rem;border:2px solid #e0e0e0;border-radius:10px;font-size:.82rem;outline:none;">
+                                <option value="">-- Semua Kelompok Usia --</option>
+                                <option value="3-6">Usia 3 – 6 Thn (PAUD/TK)</option>
+                                <option value="6-12">Usia 6 – 12 Thn (SD)</option>
+                            </select>
+                            <input type="text" class="admin-search" id="adminRaportSearch"
+                                placeholder="🔍 Cari nama / NIS / cabang..." oninput="renderAdminRaportTable()">
+                        </div>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table class="data-table" id="adminRaportTable">
+                            <thead>
+                                <tr>
+                                    <th>NIS</th>
+                                    <th>Nama Santri</th>
+                                    <th>Cabang</th>
+                                    <th>Kelompok Usia</th>
+                                    <th>Capaian Hafalan (Doa / Surah)</th>
+                                    <th>Nilai Rata-Rata (4 Pilar)</th>
+                                    <th>Predikat 7 Skala</th>
+                                    <th>Tgl Update</th>
+                                    <th>Aksi Monitoring</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminRaportTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="admin-empty" id="adminRaportEmpty" style="display:none;">
+                        <div class="empty-icon">📊</div>
+                        <p>Belum ada data raport santri.</p>
                     </div>
                 </div>
             </div>
@@ -4564,6 +5158,11 @@ window.addEventListener('scroll', () => {
    18. PENDAFTARAN SANTRI — SISTEM LENGKAP
    ============================================ */
 
+// === PASSWORD GENERATOR (6 digit acak) ===
+function generatePassword() {
+    return String(Math.floor(100000 + Math.random() * 900000));
+}
+
 // === NIS GENERATOR ===
 function getNisCounter() {
     return parseInt(localStorage.getItem('br_family_counter') || '0');
@@ -4603,6 +5202,7 @@ function buildSantriForms() {
     let html = '';
     for (let i = 1; i <= selectedCount; i++) {
         const nis = generateNIS(fNum, i);
+        const pass = generatePassword();
         html += `
         <div class="santri-card" id="santri-card-${i}">
             <div class="santri-card-header">
@@ -4620,8 +5220,18 @@ function buildSantriForms() {
                     <div class="nis-number">${nis}</div>
                 </div>
             </div>
-            <div class="nis-note">
-                ⚠️ <strong>Harap dicatat NIS ini!</strong> Nomor Induk Santri digunakan sebagai kode pembayaran SPP Bulanan dan keperluan administrasi lainnya. NIS akan dikonfirmasi ulang oleh admin setelah pendaftaran diterima.
+
+            <!-- PASSWORD DISPLAY -->
+            <div class="nis-display" style="background:linear-gradient(135deg,rgba(156,39,176,0.08),rgba(255,64,129,0.08));border:2px solid rgba(156,39,176,0.25);margin-top:.5rem;">
+                <div class="nis-icon" style="background:linear-gradient(135deg,var(--purple),var(--pink));">🔐</div>
+                <div>
+                    <div class="nis-sublabel">Password Login Raport</div>
+                    <div class="nis-number" id="pass-display-${i}" style="color:var(--purple);letter-spacing:4px;">${pass}</div>
+                    <input type="hidden" id="pass-santri-${i}" value="${pass}">
+                </div>
+            </div>
+            <div class="nis-note" style="background:#F3E5F5;border-color:rgba(156,39,176,0.35);color:#6A1B9A;">
+                ⭐ <strong>Simpan No Induk Santri (NIS) dan Password ini</strong>, digunakan sebagai Login untuk melihat <strong>Raport Santri</strong>. NIS dan Password akan dikonfirmasi ulang oleh admin setelah pendaftaran diterima.
             </div>
 
             <div class="form-row">
@@ -4760,16 +5370,21 @@ function submitPendaftaran() {
     }) + ', ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
     const nisList = [];
+    const passList = [];
     const newRecords = [];
 
     santriList.forEach((s, idx) => {
         const nis = generateNIS(currentCounter, idx + 1);
+        // Ambil password dari hidden input yang sudah digenerate di form
+        const passEl = document.getElementById('pass-santri-' + (idx + 1));
+        const password = passEl ? passEl.value : generatePassword();
         nisList.push(nis);
+        passList.push(password);
         const record = {
             nis, nama: s.nama, usia: s.usia, jk: s.jk, foto: s.foto,
             namaWali, waWali, alamatWali, emailWali,
             cabang: cabangWali, program: selectedProgram,
-            tanggalDaftar, familyNum: currentCounter
+            tanggalDaftar, familyNum: currentCounter, password
         };
         allSantri.push(record);
         newRecords.push(record);
@@ -4792,7 +5407,8 @@ function submitPendaftaran() {
                 waWali: rec.waWali,
                 alamatWali: rec.alamatWali,
                 program: rec.program,
-                tanggalDaftar: rec.tanggalDaftar
+                tanggalDaftar: rec.tanggalDaftar,
+                password: rec.password
             });
         });
         saveCabangList(allCabang);
@@ -4803,13 +5419,27 @@ function submitPendaftaran() {
 
     // Success popup
     const nisText = nisList.join(', ');
+    // Build NIS + Password info per santri
+    let nisPassInfo = '';
+    newRecords.forEach((rec, idx) => {
+        nisPassInfo += `<div style="background:#E3F2FD;border-radius:10px;padding:.6rem 1rem;margin:.4rem 0;border-left:4px solid var(--blue);">
+            <div style="font-size:.8rem;color:#37474f;">Santri ${idx+1}: <strong>${rec.nama}</strong></div>
+            <div style="font-family:monospace;font-size:.95rem;font-weight:800;color:var(--dark);">NIS: ${rec.nis} &nbsp;|&nbsp; Password: ${rec.password}</div>
+        </div>`;
+    });
+
     const msgEl = document.getElementById('success-msg');
     const titleEl = document.getElementById('success-title');
     if (titleEl) titleEl.textContent = 'Pendaftaran Santri Berhasil Dikirim!';
     if (msgEl) {
         msgEl.innerHTML = `Jazakumullahu Khairan! Data santri telah tersimpan dan terhubung ke <strong>${cabangWali}</strong> serta terkirim ke Admin Pusat.<br><br>
-            📌 <strong>NIS Santri Anda: ${nisText}</strong><br><br>
-            Harap catat NIS ini sebagai kode pembayaran SPP Bulanan. Kami akan menghubungi Anda via WhatsApp dalam 1×24 jam. 🌟`;
+            <div style="background:#FFF9C4;border:2px solid #FFD600;border-radius:12px;padding:.8rem 1rem;margin-bottom:.8rem;">
+                ⭐ <strong>Simpan NIS dan Password berikut!</strong> Digunakan sebagai Login untuk melihat <strong>Raport Santri</strong>:
+            </div>
+            ${nisPassInfo}
+            <div style="margin-top:.8rem;font-size:.82rem;color:#37474f;">
+                Kami akan menghubungi Anda via WhatsApp dalam 1×24 jam. 🌟
+            </div>`;
     }
     document.getElementById('success-popup')?.classList.add('open');
 
@@ -4837,29 +5467,44 @@ function submitPendaftaran() {
    19. FITUR PORTAL HUB & CABANG BINTANG RABBANI
    ============================================ */
 
-// === HUB INTERACTION LOGIC (2 KOTAK PRESISI) ===
+// === HUB INTERACTION LOGIC (3 KOTAK PRESISI) ===
 function openPortalView(type) {
     const cardSantri = document.getElementById('card-choice-santri');
     const cardCabang = document.getElementById('card-choice-cabang');
+    const cardRaport = document.getElementById('card-choice-raport');
     const containerSantri = document.getElementById('portal-container-santri');
     const containerCabang = document.getElementById('portal-container-cabang');
+    const containerRaport = document.getElementById('portal-container-raport');
+
+    // Reset all
+    [cardSantri, cardCabang, cardRaport].forEach(c => c?.classList.remove('active'));
+    [containerSantri, containerCabang, containerRaport].forEach(c => c?.classList.remove('show'));
 
     if (type === 'santri') {
         cardSantri?.classList.add('active');
-        cardCabang?.classList.remove('active');
         containerSantri?.classList.add('show');
-        containerCabang?.classList.remove('show');
         setTimeout(() => {
             containerSantri?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 80);
     } else if (type === 'cabang') {
         cardCabang?.classList.add('active');
-        cardSantri?.classList.remove('active');
         containerCabang?.classList.add('show');
-        containerSantri?.classList.remove('show');
         checkCabangSession();
         setTimeout(() => {
             containerCabang?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+    } else if (type === 'raport') {
+        cardRaport?.classList.add('active');
+        containerRaport?.classList.add('show');
+        // Reset raport view to login state
+        const loginSec = document.getElementById('raport-login-section');
+        const viewSec = document.getElementById('raport-view-section');
+        if (loginSec) loginSec.style.display = '';
+        if (viewSec) viewSec.style.display = 'none';
+        const errEl = document.getElementById('raport-login-error');
+        if (errEl) errEl.style.display = 'none';
+        setTimeout(() => {
+            containerRaport?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 80);
     }
 }
@@ -4867,13 +5512,13 @@ function openPortalView(type) {
 function closePortalView() {
     const cardSantri = document.getElementById('card-choice-santri');
     const cardCabang = document.getElementById('card-choice-cabang');
+    const cardRaport = document.getElementById('card-choice-raport');
     const containerSantri = document.getElementById('portal-container-santri');
     const containerCabang = document.getElementById('portal-container-cabang');
+    const containerRaport = document.getElementById('portal-container-raport');
 
-    cardSantri?.classList.remove('active');
-    cardCabang?.classList.remove('active');
-    containerSantri?.classList.remove('show');
-    containerCabang?.classList.remove('show');
+    [cardSantri, cardCabang, cardRaport].forEach(c => c?.classList.remove('active'));
+    [containerSantri, containerCabang, containerRaport].forEach(c => c?.classList.remove('show'));
 
     document.getElementById('daftar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -4887,6 +5532,16 @@ function initCabangData() {
     const hasSusukan = cabangList.some(c => c.email === 'niakurni230193@gmail.com');
     const hasDurenBaru = cabangList.some(c => c.email === 'rzulkarnain88@gmail.com');
 
+    // Force-reset jika data lama tidak punya password di santri (versi lama)
+    const existingSantri = JSON.parse(localStorage.getItem('br_santri_data') || '[]');
+    const needsPasswordSeed = existingSantri.length > 0 && existingSantri.some(s => !s.password);
+    if (needsPasswordSeed) {
+        localStorage.removeItem('br_cabang_data');
+        localStorage.removeItem('br_santri_data');
+        localStorage.removeItem('br_family_counter');
+        cabangList = [];
+    }
+
     if (cabangList.length === 0 || !hasSusukan || !hasDurenBaru) {
         // 10 Santri Cabang Susukan
         const santriSusukan = [
@@ -4894,61 +5549,61 @@ function initCabangData() {
                 nis: '001001', nama: 'Muhammad Al-Fatih Pratama', usia: '6', jk: 'Putra',
                 namaWali: 'H. Hendra Pratama', waWali: '081281112233',
                 alamatWali: 'Jl. Susukan Raya No. 12, RT 01/RW 03, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-20, 08:30'
+                program: 'General/Umum', tanggalDaftar: '2026-08-20, 08:30', password: '142536'
             },
             {
                 nis: '002001', nama: 'Ahmad Zaidan Al-Farisi', usia: '7', jk: 'Putra',
                 namaWali: 'Bambang Sugianto', waWali: '081282223344',
                 alamatWali: 'Perum Susukan Elok Blok A2 No. 5, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-20, 09:15'
+                program: 'General/Umum', tanggalDaftar: '2026-08-20, 09:15', password: '253647'
             },
             {
                 nis: '003001', nama: 'Ibrahim Malik Rabbani', usia: '5', jk: 'Putra',
                 namaWali: 'Drs. H. Mulyadi', waWali: '081283334455',
                 alamatWali: 'Jl. Melati RT 03/RW 02, Susukan, Bojong Gede',
-                program: 'Private Khusus', tanggalDaftar: '2026-08-21, 10:00'
+                program: 'Private Khusus', tanggalDaftar: '2026-08-21, 10:00', password: '364758'
             },
             {
                 nis: '004001', nama: 'Kenzi Rafif Danendra', usia: '8', jk: 'Putra',
                 namaWali: 'Fajar Nugroho, S.T.', waWali: '081284445566',
                 alamatWali: 'Jl. KH. Abdul Hamid No. 18, Bojong Gede',
-                program: 'Family Group', tanggalDaftar: '2026-08-21, 13:45'
+                program: 'Family Group', tanggalDaftar: '2026-08-21, 13:45', password: '475869'
             },
             {
                 nis: '005001', nama: 'Bilal Syahputra Ramadhan', usia: '6', jk: 'Putra',
                 namaWali: 'Surya Ramadhan', waWali: '081285556677',
                 alamatWali: 'Kp. Susukan Tengah RT 04/RW 01, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-22, 08:00'
+                program: 'General/Umum', tanggalDaftar: '2026-08-22, 08:00', password: '586970'
             },
             {
                 nis: '006001', nama: 'Aisyah Humaira Azzahra', usia: '5', jk: 'Putri',
                 namaWali: 'Ir. Rahmat Hidayat', waWali: '081286667788',
                 alamatWali: 'Jl. Flamboyan No. 7, Susukan, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-22, 11:20'
+                program: 'General/Umum', tanggalDaftar: '2026-08-22, 11:20', password: '697081'
             },
             {
                 nis: '007001', nama: 'Fathimah Khansa Maryam', usia: '7', jk: 'Putri',
                 namaWali: 'dr. H. Syarifudin', waWali: '081287778899',
                 alamatWali: 'Perumahan Grand Susukan Indah Blok C3, Bojong Gede',
-                program: 'Private Khusus', tanggalDaftar: '2026-08-23, 09:30'
+                program: 'Private Khusus', tanggalDaftar: '2026-08-23, 09:30', password: '708192'
             },
             {
                 nis: '008001', nama: 'Zahra Salsabila Putri', usia: '6', jk: 'Putri',
                 namaWali: 'Agus Setiawan', waWali: '081288889900',
                 alamatWali: 'Jl. Raya Susukan RT 02/RW 04 No. 44, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-23, 14:10'
+                program: 'General/Umum', tanggalDaftar: '2026-08-23, 14:10', password: '819203'
             },
             {
                 nis: '009001', nama: 'Naura Hafizhah Qanita', usia: '8', jk: 'Putri',
                 namaWali: 'H. Lukman Hakim', waWali: '081289990011',
                 alamatWali: 'Jl. Dahlia No. 15, RT 01/RW 02, Susukan',
-                program: 'Family Group', tanggalDaftar: '2026-08-24, 10:40'
+                program: 'Family Group', tanggalDaftar: '2026-08-24, 10:40', password: '920314'
             },
             {
                 nis: '010001', nama: 'Syifa Maulida Rahmah', usia: '5', jk: 'Putri',
                 namaWali: 'Wahyu Kurniawan', waWali: '081280001122',
                 alamatWali: 'Kp. Muara Susukan RT 05/RW 02, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-24, 15:25'
+                program: 'General/Umum', tanggalDaftar: '2026-08-24, 15:25', password: '031425'
             }
         ];
 
@@ -4958,61 +5613,61 @@ function initCabangData() {
                 nis: '011001', nama: 'Muhammad Rayyan Al-Ghifari', usia: '6', jk: 'Putra',
                 namaWali: 'H. Gunawan Wibisono', waWali: '081311112233',
                 alamatWali: 'Jl. Duren Baru Utama No. 8, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-20, 08:45'
+                program: 'General/Umum', tanggalDaftar: '2026-08-20, 08:45', password: '112233'
             },
             {
                 nis: '012001', nama: 'Dzaky Hanif Ramadhan', usia: '7', jk: 'Putra',
                 namaWali: 'Eko Prasetyo, M.M.', waWali: '081312223344',
                 alamatWali: 'Perum Duren Baru Asri Blok B No. 14, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-20, 10:30'
+                program: 'General/Umum', tanggalDaftar: '2026-08-20, 10:30', password: '223344'
             },
             {
                 nis: '013001', nama: 'Yusuf Ar-Rasyid', usia: '5', jk: 'Putra',
                 namaWali: 'H. Mansyur Hidayat', waWali: '081313334455',
                 alamatWali: 'Jl. H. Abdullah No. 22, Duren Baru',
-                program: 'Private Khusus', tanggalDaftar: '2026-08-21, 09:00'
+                program: 'Private Khusus', tanggalDaftar: '2026-08-21, 09:00', password: '334455'
             },
             {
                 nis: '014001', nama: 'Sulaiman Hamzah Albani', usia: '8', jk: 'Putra',
                 namaWali: 'Budi Hartono', waWali: '081314445566',
                 alamatWali: 'Jl. Cendrawasih RT 02/RW 05, Duren Baru',
-                program: 'General/Umum', tanggalDaftar: '2026-08-21, 14:00'
+                program: 'General/Umum', tanggalDaftar: '2026-08-21, 14:00', password: '445566'
             },
             {
                 nis: '015001', nama: 'Hasan Ali Al-Mujahid', usia: '6', jk: 'Putra',
                 namaWali: 'Dedi Supriyadi', waWali: '081315556677',
                 alamatWali: 'Perum Bukit Duren Baru Blok E2 No. 9, Bojong Gede',
-                program: 'Family Group', tanggalDaftar: '2026-08-22, 10:15'
+                program: 'Family Group', tanggalDaftar: '2026-08-22, 10:15', password: '556677'
             },
             {
                 nis: '016001', nama: 'Maryam Al-Adawiyah', usia: '5', jk: 'Putri',
                 namaWali: 'dr. H. Rudi Hermawan', waWali: '081316667788',
                 alamatWali: 'Jl. Duren Baru Indah No. 31, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-22, 13:30'
+                program: 'General/Umum', tanggalDaftar: '2026-08-22, 13:30', password: '667788'
             },
             {
                 nis: '017001', nama: 'Khadijah Az-Zahra', usia: '7', jk: 'Putri',
                 namaWali: 'H. Indra Saputra', waWali: '081317778899',
                 alamatWali: 'Jl. Kemuning No. 16, RT 04/RW 06, Duren Baru',
-                program: 'Private Khusus', tanggalDaftar: '2026-08-23, 08:50'
+                program: 'Private Khusus', tanggalDaftar: '2026-08-23, 08:50', password: '778899'
             },
             {
                 nis: '018001', nama: 'Salma Anindya Shakila', usia: '6', jk: 'Putri',
                 namaWali: 'Taufik Hidayat, S.E.', waWali: '081318889900',
                 alamatWali: 'Perumahan Duren Permai Blok A3 No. 4, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-23, 11:45'
+                program: 'General/Umum', tanggalDaftar: '2026-08-23, 11:45', password: '889900'
             },
             {
                 nis: '019001', nama: 'Hafidzah Nur Izzati', usia: '8', jk: 'Putri',
                 namaWali: 'H. Anwar Sanusi', waWali: '081319990011',
                 alamatWali: 'Jl. Duren Baru Timur RT 01/RW 07 No. 50',
-                program: 'Family Group', tanggalDaftar: '2026-08-24, 09:20'
+                program: 'Family Group', tanggalDaftar: '2026-08-24, 09:20', password: '990011'
             },
             {
                 nis: '020001', nama: 'Rania Salsabila Putri', usia: '5', jk: 'Putri',
                 namaWali: 'Agung Nugraha', waWali: '081310001122',
                 alamatWali: 'Jl. Melur RT 03/RW 05, Duren Baru, Bojong Gede',
-                program: 'General/Umum', tanggalDaftar: '2026-08-24, 16:00'
+                program: 'General/Umum', tanggalDaftar: '2026-08-24, 16:00', password: '001122'
             }
         ];
 
@@ -5048,7 +5703,7 @@ function initCabangData() {
                 namaCabang: 'Cabang Duren baru',
                 email: 'rzulkarnain88@gmail.com',
                 password: '113377',
-                namaPengelola: 'Ustadz Rizki Zulkarnain, S.Pd.I',
+                namaPengelola: 'Ustadz Rizki Zulkarnain',
                 fotoPengelola: '',
                 noWa: '081299998877',
                 alamatLengkap: 'Jl. Duren Baru Raya No. 45, RT 03 / RW 06, Bojong Gede, Kabupaten Bogor',
@@ -5064,7 +5719,7 @@ function initCabangData() {
                     'Meja belajar untuk para santri'
                 ],
                 assessmentAgreed: true,
-                daftarGuru: ['Ustadz Rizki Zulkarnain, S.Pd.I', 'Ustadz Muhammad Ilham, S.Pd', 'Ustadzah Nurul Hidayah, S.Ag'],
+                daftarGuru: ['Ustadz Rizki Zulkarnain', 'Ustadz Muhammad Ilham, S.Pd', 'Ustadzah Nurul Hidayah, S.Ag'],
                 santriList: santriDurenBaru,
                 updateRequest: { status: 'none', note: '', date: '' },
                 tanggalDaftar: '2026-08-12'
@@ -5115,6 +5770,7 @@ function populateCabangDropdowns() {
     const list = getCabangList();
     const selectSantri = document.getElementById('cabang-wali');
     const selectAdmin = document.getElementById('adminFilterCabang');
+    const selectAdminRaport = document.getElementById('adminRaportFilterCabang');
 
     if (selectSantri) {
         const curVal = selectSantri.value;
@@ -5128,6 +5784,13 @@ function populateCabangDropdowns() {
         selectAdmin.innerHTML = '<option value="">-- Semua Cabang --</option>' +
             list.map(c => `<option value="${c.namaCabang}">${c.namaCabang}</option>`).join('');
         if (curVal) selectAdmin.value = curVal;
+    }
+
+    if (selectAdminRaport) {
+        const curVal = selectAdminRaport.value;
+        selectAdminRaport.innerHTML = '<option value="">-- Semua Cabang --</option>' +
+            list.map(c => `<option value="${c.namaCabang}">${c.namaCabang}</option>`).join('');
+        if (curVal) selectAdminRaport.value = curVal;
     }
 }
 
@@ -5268,9 +5931,10 @@ function simpanSantriModalCabang() {
 
     const currentFNum = previewFamilyNum();
     const nis = generateNIS(currentFNum, cabangAwalSantriList.length + 1);
+    const password = generatePassword();
 
     cabangAwalSantriList.push({
-        nis, nama, usia, jk, namaWali, waWali, alamatWali, program,
+        nis, password, nama, usia, jk, namaWali, waWali, alamatWali, program,
         tanggalDaftar: new Date().toLocaleDateString('id-ID')
     });
 
@@ -5283,7 +5947,7 @@ function renderCabangAwalSantriTable() {
     if (!tbody) return;
 
     if (cabangAwalSantriList.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="10" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri awal ditambahkan. Klik tombol <strong>"+ Tambah Santri Aktif"</strong> di atas.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="11" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri awal ditambahkan. Klik tombol <strong>"+ Tambah Santri Aktif"</strong> di atas.</td></tr>`;
         return;
     }
 
@@ -5291,6 +5955,7 @@ function renderCabangAwalSantriTable() {
         <tr>
             <td><strong>${idx + 1}</strong></td>
             <td style="font-family:monospace;font-weight:800;color:var(--blue);">${s.nis}</td>
+            <td><span style="font-family:monospace;font-weight:800;color:var(--purple);background:#F3E5F5;padding:.15rem .45rem;border-radius:6px;letter-spacing:1px;">${s.password || '—'}</span></td>
             <td><strong>${s.nama}</strong></td>
             <td>${s.usia} thn</td>
             <td>${s.jk}</td>
@@ -5547,7 +6212,7 @@ function renderCabangDashboard() {
 
     if (!tbody) return;
     if (santriList.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="10" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri terdaftar di cabang ini. Santri baru akan muncul saat orang tua memilih cabang ini di formulir pendaftaran.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="12" style="text-align:center;color:#9e9e9e;padding:1.5rem;">Belum ada santri terdaftar di cabang ini. Santri baru akan muncul saat orang tua memilih cabang ini di formulir pendaftaran.</td></tr>`;
         return;
     }
 
@@ -5567,6 +6232,7 @@ function renderCabangDashboard() {
         return `<tr>
             <td><strong>${idx + 1}</strong></td>
             <td style="font-family:monospace;font-weight:800;color:var(--blue);">${s.nis || '—'}</td>
+            <td><span style="font-family:monospace;font-weight:800;color:var(--purple);background:#F3E5F5;padding:.15rem .45rem;border-radius:6px;letter-spacing:1px;">${s.password || '—'}</span></td>
             <td>
                 <strong>${s.nama || '—'}</strong>
                 ${statusTag}
@@ -5579,6 +6245,9 @@ function renderCabangDashboard() {
             <td><span class="badge-program badge-general">${s.program || 'General/Umum'}</span></td>
             <td>
                 <div style="display:flex;gap:.35rem;flex-wrap:nowrap;">
+                    <button type="button" class="btn-admin-action" style="background:var(--purple);color:white;padding:.32rem .65rem;font-size:.72rem;border-radius:8px;display:inline-flex;align-items:center;gap:.25rem;white-space:nowrap;" onclick="openModalInputRaportCabang('${s.nis}')" title="Input & Kelola Raport Santri (Hak Prerogatif Guru)">
+                        <i class="fa-solid fa-file-signature"></i> 📝 Raport
+                    </button>
                     <button type="button" class="btn-admin-action" style="background:var(--blue);color:white;padding:.32rem .65rem;font-size:.72rem;border-radius:8px;display:inline-flex;align-items:center;gap:.25rem;white-space:nowrap;" onclick="openModalEditSantriCabang('${s.nis}')" title="Edit Data Santri">
                         <i class="fa-solid fa-pen-to-square"></i> Edit
                     </button>
@@ -5855,25 +6524,37 @@ function submitRequestUpdateCabang() {
    ============================================ */
 
 function openAdminPanel() {
-    document.getElementById('adminOverlay').classList.add('open');
-    document.getElementById('adminLoginWrap').style.display = 'flex';
-    document.getElementById('adminDashboard').classList.remove('show');
+    const overlay = document.getElementById('adminOverlay');
+    if (!overlay) return;
+
+    overlay.style.display = 'flex';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
     const emailEl = document.getElementById('admin-email-input');
     const passEl = document.getElementById('admin-pass-input');
     const errEl = document.getElementById('admin-login-error');
     if (emailEl) emailEl.value = '';
     if (passEl) passEl.value = '';
     if (errEl) errEl.classList.remove('show');
-    document.body.style.overflow = 'hidden';
 
     // Auto-login if session active
     if (sessionStorage.getItem('br_admin_ok') === '1') {
         showAdminDashboard();
+    } else {
+        const loginWrap = document.getElementById('adminLoginWrap');
+        const dashboard = document.getElementById('adminDashboard');
+        if (loginWrap) loginWrap.style.display = 'flex';
+        if (dashboard) dashboard.classList.remove('show');
     }
 }
 
 function closeAdminPanel() {
-    document.getElementById('adminOverlay').classList.remove('open');
+    const overlay = document.getElementById('adminOverlay');
+    if (overlay) {
+        overlay.classList.remove('open');
+        overlay.style.display = '';
+    }
     document.body.style.overflow = '';
 }
 
@@ -5907,6 +6588,7 @@ function showAdminDashboard() {
     renderAdminTable();
     renderAdminCabangTable();
     renderAdminRequestsTable();
+    renderAdminRaportTable();
 }
 
 function doAdminLogout() {
@@ -5920,7 +6602,7 @@ function doAdminLogout() {
 }
 
 function switchAdminTab(tab) {
-    ['santri', 'cabang', 'requests'].forEach(t => {
+    ['santri', 'cabang', 'requests', 'raport'].forEach(t => {
         document.getElementById(`admin-tab-btn-${t}`)?.classList.toggle('active', t === tab);
         document.getElementById(`admin-pane-${t}`)?.classList.toggle('active', t === tab);
     });
@@ -5928,6 +6610,7 @@ function switchAdminTab(tab) {
     if (tab === 'santri') renderAdminTable();
     if (tab === 'cabang') renderAdminCabangTable();
     if (tab === 'requests') renderAdminRequestsTable();
+    if (tab === 'raport') renderAdminRaportTable();
 }
 
 function renderAdminStats() {
@@ -5992,6 +6675,7 @@ function renderAdminTable() {
         return `<tr>
             <td>${fotoCell}</td>
             <td class="td-nis">${d.nis || '—'}</td>
+            <td><span style="font-family:monospace;font-weight:800;color:var(--purple);background:#F3E5F5;padding:.18rem .45rem;border-radius:6px;letter-spacing:1px;font-size:.82rem;">${d.password || '—'}</span></td>
             <td><strong>${d.nama || '—'}</strong></td>
             <td>${d.usia || '—'} thn</td>
             <td>${d.jk === 'Putra' ? '👦 Putra' : '👧 Putri'}</td>
@@ -6001,10 +6685,299 @@ function renderAdminTable() {
             <td><a href="https://wa.me/${waNum}" target="_blank" style="color:var(--green);font-weight:700;white-space:nowrap;">${d.waWali || '—'}</a></td>
             <td style="font-size:.74rem;">${d.emailWali || '—'}</td>
             <td style="font-size:.72rem;color:#78909c;white-space:nowrap;">${d.tanggalDaftar || '—'}</td>
-            <td><button type="button" class="btn-hapus" onclick="hapusSantri('${d.nis}')">🗑️ Hapus</button></td>
+            <td style="white-space:nowrap;">
+                <button type="button" class="btn-admin-action" style="background:var(--purple);color:white;padding:.28rem .55rem;font-size:.72rem;border-radius:8px;display:inline-flex;align-items:center;gap:.25rem;white-space:nowrap;margin-bottom:.25rem;" onclick="lihatRaportAdminPusat('${d.nis}')" title="Lihat & Monitoring Raport Santri Digital">
+                    <i class="fa-solid fa-chart-column"></i> Raport Santri
+                </button><br>
+                <button type="button" class="btn-hapus" onclick="hapusSantri('${d.nis}')">🗑️ Hapus</button>
+            </td>
             <td style="font-size:.72rem;max-width:220px;line-height:1.4;background:#FAFAFA;">${logUpdate}</td>
         </tr>`;
     }).join('');
+}
+
+// Data dummy progress per santri
+const raportProgressDummy = {
+    '001001': { p1: 85, p2: 78, p3: 90, p4: 72, catatan: 'Al-Fatih menunjukkan kemajuan luar biasa dalam hafalan surat pendek. Bacaan sudah cukup lancar dan tajwid mulai diperbaiki. Diharapkan orang tua terus mendampingi murojaah di rumah setiap hari.' },
+    '002001': { p1: 80, p2: 75, p3: 85, p4: 68, catatan: 'Zaidan aktif dan semangat belajar. Calistung berkembang baik, khususnya kemampuan membaca. Perlu peningkatan di bidang menulis huruf hijaiyah dengan lebih rapi.' },
+    '003001': { p1: 90, p2: 88, p3: 92, p4: 80, catatan: 'Ibrahim adalah santri yang sangat disiplin dan mandiri. Progres hafalan Al-Quran sangat memuaskan. Pertahankan konsistensi belajarnya dan tambah tantangan hafalan.' },
+    '004001': { p1: 70, p2: 72, p3: 75, p4: 65, catatan: 'Kenzi perlu pendampingan ekstra dalam fokus belajar. Sudah mulai ada perkembangan yang positif. Mohon dukungan orang tua untuk menjaga semangat belajar di rumah.' },
+    '005001': { p1: 78, p2: 80, p3: 82, p4: 70, catatan: 'Bilal cukup aktif dan responsif saat pembelajaran. Kemampuan berhitung sudah baik. Perlu ditingkatkan kebiasaan doa sehari-hari dan adab terhadap guru.' },
+    '006001': { p1: 88, p2: 84, p3: 91, p4: 77, catatan: 'Aisyah memiliki kemampuan menghafal yang sangat baik. Akhlak dan adabnya juga sangat menonjol di kelas. Terus pertahankan kebiasaan membaca Al-Quran di rumah.' },
+    '007001': { p1: 92, p2: 89, p3: 95, p4: 85, catatan: 'Fathimah adalah santri berprestasi terbaik di kelasnya. Hafalan sudah melebihi target triwulan. Direkomendasikan untuk mengikuti program tahfidz intensif.' },
+    '008001': { p1: 82, p2: 79, p3: 86, p4: 74, catatan: 'Zahra memiliki semangat belajar yang stabil. Kemampuan tilawah sudah mencapai target. Perlu lebih banyak latihan menulis dan membaca buku Iqro secara mandiri.' },
+    '009001': { p1: 76, p2: 73, p3: 80, p4: 70, catatan: 'Naura menunjukkan perkembangan yang konsisten setiap minggu. Perlu ditingkatkan keberanian untuk tampil di depan kelas saat murojaah bersama.' },
+    '010001': { p1: 83, p2: 81, p3: 87, p4: 75, catatan: 'Syifa sangat manis dan tekun dalam belajar. Hafalan surat-surat pendek sudah lengkap. Dianjurkan untuk mulai menghafal surat-surat di juz 29.' },
+    '011001': { p1: 79, p2: 77, p3: 83, p4: 71, catatan: 'Rayyan aktif dan selalu hadir tepat waktu. Kemampuan calistung berkembang baik. Terus semangat dan jangan lupa murojaah setiap malam bersama ayah/bunda.' },
+    '012001': { p1: 86, p2: 83, p3: 88, p4: 76, catatan: 'Dzaky menunjukkan bakat luar biasa dalam bidang hafalan. Sudah menghafal 3 surat baru bulan ini. Pertahankan dan tingkatkan konsistensinya.' },
+    '013001': { p1: 91, p2: 87, p3: 93, p4: 82, catatan: 'Yusuf adalah santri yang sangat menonjol. Kemampuan membaca Al-Quran sudah sangat fasih untuk usianya. Sangat direkomendasikan untuk program tahfidz.' },
+    '014001': { p1: 74, p2: 71, p3: 78, p4: 67, catatan: 'Sulaiman masih perlu penyesuaian di beberapa aspek. Kedisiplinan sudah meningkat. Mohon orang tua aktif berkomunikasi dengan ustadzah untuk pemantauan bersama.' },
+    '015001': { p1: 81, p2: 79, p3: 84, p4: 73, catatan: 'Hasan menunjukkan perkembangan yang sangat positif. Kemampuan berhitung sudah mencapai level yang baik. Perlu diperkuat di bidang hafalan doa harian.' },
+    '016001': { p1: 87, p2: 85, p3: 90, p4: 79, catatan: 'Maryam adalah santri yang penuh semangat. Hafalan doanya lengkap dan adabnya sangat baik. Terus pertahankan prestasi dan semoga menjadi anak shalehah.' },
+    '017001': { p1: 89, p2: 86, p3: 92, p4: 81, catatan: 'Khadijah memiliki kemampuan hafalan yang sangat istimewa. Sudah hafal juz 30 dengan baik. Direkomendasikan untuk mengikuti kompetisi hafalan tingkat cabang.' },
+    '018001': { p1: 84, p2: 82, p3: 88, p4: 76, catatan: 'Salma selalu aktif bertanya dan haus ilmu. Kemampuan membaca buku Iqro sudah memasuki jilid 5. Terus semangat dan jaga semangat belajarnya di rumah.' },
+    '019001': { p1: 77, p2: 75, p3: 81, p4: 69, catatan: 'Hafidzah menunjukkan kemajuan yang baik meskipun awalnya pemalu. Sekarang sudah lebih percaya diri. Perlu ditingkatkan partisipasi aktif dalam kegiatan kelas.' },
+    '020001': { p1: 80, p2: 78, p3: 84, p4: 72, catatan: 'Rania sangat ceria dan membawa semangat positif ke kelas. Kemampuan calistung sudah melampaui target awal. Terus pertahankan antusiasme belajarnya.' }
+};
+
+// TAB 4: MONITORING RAPORT SANTRI GLOBAL
+function renderAdminRaportTable() {
+    const query = (document.getElementById('adminRaportSearch')?.value || '').toLowerCase();
+    const filterCabang = document.getElementById('adminRaportFilterCabang')?.value || '';
+    const filterUsia = document.getElementById('adminRaportFilterUsia')?.value || '';
+    let data = JSON.parse(localStorage.getItem('br_santri_data') || '[]');
+
+    if (filterCabang) {
+        data = data.filter(d => d.cabang === filterCabang);
+    }
+    if (query) {
+        data = data.filter(d =>
+            (d.nama || '').toLowerCase().includes(query) ||
+            (d.nis || '').includes(query) ||
+            (d.cabang || '').toLowerCase().includes(query)
+        );
+    }
+
+    const tbody = document.getElementById('adminRaportTableBody');
+    const emptyEl = document.getElementById('adminRaportEmpty');
+    if (!tbody) return;
+
+    if (data.length === 0) {
+        tbody.innerHTML = '';
+        if (emptyEl) emptyEl.style.display = 'block';
+        return;
+    }
+    if (emptyEl) emptyEl.style.display = 'none';
+
+    tbody.innerHTML = data.map(d => {
+        const rData = d.raportData || raportProgressDummy[d.nis] || { p1: 80, p2: 75, p3: 85, p4: 70, catatan: '' };
+        const kelompokUsia = filterUsia || rData.kelompokUsia || (d.usia && parseInt(d.usia) <= 6 ? '3-6' : '6-12');
+        
+        let subScoreSum = 0;
+        let subScoreCount = 0;
+        if (rData.subScores) {
+            Object.values(rData.subScores).forEach(val => {
+                subScoreSum += val;
+                subScoreCount++;
+            });
+        }
+        const avg = subScoreCount > 0 ? (subScoreSum / subScoreCount).toFixed(1) : (((rData.p1 || 80) + (rData.p2 || 75) + (rData.p3 || 85) + (rData.p4 || 70)) / 4).toFixed(1);
+        const starObj = getStars7(parseFloat(avg));
+
+        let hafalanSummary = '—';
+        if (kelompokUsia === '3-6') {
+            const list = rData.doaHarianList || [];
+            hafalanSummary = `<span style="font-weight:700;color:#2E7D32;font-size:.75rem;">🙏 ${list.length} Doa Tercentang</span>`;
+        } else {
+            hafalanSummary = `<span style="font-weight:700;color:var(--blue);font-size:.78rem;">📖 ${rData.surahTerakhir || 'Surah An-Nas'}</span>`;
+        }
+
+        const ageBadge = kelompokUsia === '3-6'
+            ? `<span style="background:#FFF3E0;color:#E65100;font-size:.72rem;font-weight:800;padding:.2rem .5rem;border-radius:6px;">PAUD/TK (3-6 Thn)</span>`
+            : `<span style="background:#E3F2FD;color:#1565C0;font-size:.72rem;font-weight:800;padding:.2rem .5rem;border-radius:6px;">SD (6-12 Thn)</span>`;
+
+        return `<tr>
+            <td class="td-nis">${d.nis || '—'}</td>
+            <td><strong>${d.nama || '—'}</strong></td>
+            <td style="font-size:.76rem;">${d.cabang || '—'}</td>
+            <td>${ageBadge}</td>
+            <td>${hafalanSummary}</td>
+            <td style="font-weight:800;color:var(--dark);">${avg} / 100</td>
+            <td style="white-space:nowrap;">
+                <div style="font-size:.75rem;letter-spacing:1px;">${starObj.stars}</div>
+                <span style="font-size:.7rem;font-weight:800;color:var(--purple);">${starObj.code} (${starObj.label})</span>
+            </td>
+            <td style="font-size:.72rem;color:#78909c;">${rData.updatedAt || d.tanggalDaftar || '—'}</td>
+            <td>
+                <button type="button" class="btn-admin-action" style="background:var(--purple);color:white;padding:.28rem .55rem;font-size:.72rem;border-radius:8px;display:inline-flex;align-items:center;gap:.25rem;white-space:nowrap;" onclick="lihatRaportAdminPusat('${d.nis}')">
+                    <i class="fa-solid fa-chart-column"></i> Detail Raport
+                </button>
+            </td>
+        </tr>`;
+    }).join('');
+}
+
+function lihatRaportAdminPusat(nis) {
+    if (!nis) return;
+    const searchNis = String(nis).trim();
+    const globalSantri = JSON.parse(localStorage.getItem('br_santri_data') || '[]');
+    let santri = globalSantri.find(s => String(s.nis).trim() === searchNis);
+    
+    // Fallback to cabang list if needed
+    if (!santri) {
+        const list = getCabangList();
+        for (let b of list) {
+            if (b.santriList) {
+                let s = b.santriList.find(x => String(x.nis).trim() === searchNis);
+                if (s) { santri = s; break; }
+            }
+        }
+    }
+
+    if (!santri) {
+        alert('⚠️ Data santri tidak ditemukan (NIS: ' + searchNis + ').');
+        return;
+    }
+
+    const rData = santri.raportData || raportProgressDummy[santri.nis] || { p1: 85, p2: 78, p3: 90, p4: 72, catatan: '' };
+    const ageGroup = rData.kelompokUsia || (santri.usia && parseInt(santri.usia) <= 6 ? '3-6' : '6-12');
+    const pillars = getPillarDefinitions(ageGroup, rData);
+
+    let totalSubSum = 0;
+    let totalSubCount = 0;
+
+    let pillarsHtml = '';
+    pillars.forEach(p => {
+        const pRub = getStars7(p.score);
+        pillarsHtml += `
+        <div style="background:#FAF9FE;border-radius:12px;padding:1rem;margin-bottom:1rem;border:1px solid #E1BEE7;border-left:4px solid ${p.color};">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem;">
+                <div style="font-weight:800;color:var(--dark);font-size:.92rem;">${p.icon} ${p.title}</div>
+                <div style="text-align:right;">
+                    <span style="font-size:.8rem;letter-spacing:1px;">${pRub.stars}</span>
+                    <span style="font-size:.72rem;font-weight:800;background:${p.badgeBg};color:${p.color};padding:.15rem .5rem;border-radius:8px;margin-left:.4rem;">${pRub.code} — ${pRub.label}</span>
+                </div>
+            </div>
+            <table style="width:100%;border-collapse:collapse;font-size:.78rem;">
+                <thead>
+                    <tr style="background:#f1f5f9;color:#475569;text-align:left;">
+                        <th style="padding:.4rem .6rem;">No</th>
+                        <th style="padding:.4rem .6rem;">Detail Sub-Indikator</th>
+                        <th style="padding:.4rem .6rem;">Kategori</th>
+                        <th style="padding:.4rem .6rem;text-align:center;">Skala 7</th>
+                        <th style="padding:.4rem .6rem;text-align:center;">Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        p.items.forEach(item => {
+            const subScore = (rData.subScores && rData.subScores[item.id] !== undefined)
+                ? rData.subScores[item.id]
+                : Math.min(100, Math.max(40, p.score + item.delta));
+            totalSubSum += subScore;
+            totalSubCount++;
+            const subRub = getStars7(subScore);
+            const catBadgeBg = item.cat.includes('Agama') ? '#E8F5E9' : (item.cat.includes('PR') ? '#FFF3E0' : '#E3F2FD');
+            const catBadgeColor = item.cat.includes('Agama') ? '#2E7D32' : (item.cat.includes('PR') ? '#E65100' : '#1565C0');
+
+            pillarsHtml += `
+                <tr style="border-bottom:1px solid #f1f5f9;">
+                    <td style="padding:.4rem .6rem;font-weight:700;color:#64748b;">${item.id}</td>
+                    <td style="padding:.4rem .6rem;font-weight:600;">${item.name}</td>
+                    <td style="padding:.4rem .6rem;"><span style="font-size:.68rem;font-weight:800;padding:.1rem .4rem;border-radius:6px;background:${catBadgeBg};color:${catBadgeColor};">${item.cat}</span></td>
+                    <td style="padding:.4rem .6rem;text-align:center;font-size:.78rem;letter-spacing:1px;">${subRub.stars}</td>
+                    <td style="padding:.4rem .6rem;text-align:center;font-weight:800;color:${p.color};">${subScore}</td>
+                </tr>
+            `;
+        });
+
+        pillarsHtml += `
+                </tbody>
+            </table>
+        </div>
+        `;
+    });
+
+    const overallAvg = totalSubCount > 0 ? (totalSubSum / totalSubCount).toFixed(2) : '82.50';
+    const overallRub = calculateRubrik7(overallAvg);
+    const overallStars = getStars7(parseFloat(overallAvg));
+
+    let hafalanBoxHtml = '';
+    if (ageGroup === '3-6') {
+        const list = rData.doaHarianList || [
+            "Doa Sebelum & Sesudah Makan",
+            "Doa Sebelum & Bangun Tidur",
+            "Doa Untuk Kedua Orang Tua",
+            "Doa Kebaikan Dunia & Akhirat",
+            "Doa Sebelum Belajar"
+        ];
+        const badgesHtml = list.length > 0
+            ? list.map(d => `<span style="display:inline-flex;align-items:center;gap:.3rem;background:#E8F5E9;color:#2E7D32;font-size:.74rem;font-weight:800;padding:.25rem .55rem;border-radius:8px;border:1px solid #A5D6A7;"><i class="fa-solid fa-circle-check" style="color:#4CAF50;"></i> ${d}</span>`).join('')
+            : '<span style="color:#78909c;font-size:.78rem;font-style:italic;">Belum ada doa yang dicentang.</span>';
+
+        hafalanBoxHtml = `
+            <div style="background:#F4FBF7;border:1.5px solid #A5D6A7;border-radius:12px;padding:.9rem;margin-bottom:1rem;">
+                <div style="font-size:.72rem;color:#2E7D32;font-weight:800;margin-bottom:.4rem;text-transform:uppercase;">
+                    <i class="fa-solid fa-hands-praying"></i> Capaian Hafalan Doa-Doa Harian (Usia 3 - 6 Tahun):
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;">
+                    ${badgesHtml}
+                </div>
+            </div>
+        `;
+    } else {
+        hafalanBoxHtml = `
+            <div style="background:#F4F8FB;border:1.5px solid #90CAF9;border-radius:12px;padding:.9rem;margin-bottom:1rem;">
+                <div style="font-size:.72rem;color:#1565C0;font-weight:800;text-transform:uppercase;">
+                    <i class="fa-solid fa-book-quran"></i> Capaian Hafalan Surah Terakhir (Usia 6 - 12 Tahun):
+                </div>
+                <div style="font-size:1.05rem;font-weight:900;color:var(--blue);margin-top:.2rem;">
+                    ${rData.surahTerakhir || 'Surah An-Nas (Surah Ke-114)'}
+                </div>
+            </div>
+        `;
+    }
+
+    const bodyEl = document.getElementById('admin-view-raport-body');
+    if (bodyEl) {
+        bodyEl.innerHTML = `
+            <div style="background:#F8FAFC;border-radius:12px;padding:.9rem 1.1rem;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;border:1px solid #e2e8f0;">
+                <div>
+                    <div style="font-size:1.05rem;font-weight:900;color:var(--dark);">${santri.nama || '—'}</div>
+                    <div style="font-size:.78rem;color:#64748b;">NIS: <strong>${santri.nis}</strong> | Cabang: <strong>${santri.cabang || '—'}</strong> | Wali: <strong>${santri.namaWali || '—'} (${santri.waWali || '—'})</strong></div>
+                </div>
+                <div style="text-align:right;">
+                    <span style="font-size:.72rem;font-weight:800;padding:.2rem .6rem;border-radius:10px;background:${ageGroup === '3-6' ? '#FFF3E0' : '#E3F2FD'};color:${ageGroup === '3-6' ? '#E65100' : '#1565C0'};">
+                        Kurikulum: ${ageGroup === '3-6' ? 'PAUD / TK (3-6 Thn)' : 'SD (6-12 Thn)'}
+                    </span>
+                    <div style="font-size:.72rem;color:#94a3b8;margin-top:.2rem;">Password Raport: <code style="color:var(--purple);font-weight:800;">${santri.password || '—'}</code></div>
+                </div>
+            </div>
+
+            ${hafalanBoxHtml}
+
+            <!-- STANDAR RUBRIK 7 SKALA AKHIR SUMMARY -->
+            <div style="background:linear-gradient(135deg,var(--dark),#283593);color:white;border-radius:14px;padding:1.1rem;margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;">
+                <div>
+                    <div style="font-size:.75rem;opacity:.85;font-weight:700;text-transform:uppercase;">RATA-RATA NILAI AKHIR RAPORT & RUBRIK 7 SKALA:</div>
+                    <div style="font-size:1.6rem;font-weight:900;margin-top:.1rem;color:var(--yellow);">${overallAvg} / 100</div>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:1.1rem;letter-spacing:1px;">${overallStars.stars}</div>
+                    <span style="display:inline-block;font-size:.8rem;font-weight:900;padding:.25rem .75rem;border-radius:12px;background:rgba(255,255,255,0.2);color:white;margin-top:.2rem;">
+                        ${overallRub.code} — ${overallRub.label}
+                    </span>
+                </div>
+            </div>
+
+            <!-- DETAIL 4 PILAR -->
+            <div style="margin-bottom:1rem;">
+                <div style="font-size:.88rem;font-weight:800;color:var(--dark);margin-bottom:.6rem;"><i class="fa-solid fa-list-check"></i> Matriks Capaian Detail Sub-Indikator 4 Pilar (0 - 100):</div>
+                ${pillarsHtml}
+            </div>
+
+            <!-- CATATAN USTADZAH -->
+            <div style="background:#FFFDE7;border:1.5px solid #FFF59D;border-radius:12px;padding:1rem;">
+                <div style="font-size:.78rem;font-weight:800;color:#F57F17;margin-bottom:.3rem;"><i class="fa-solid fa-comment-dots"></i> Catatan Perkembangan dari Ustadzah Pembimbing:</div>
+                <div style="font-size:.84rem;color:#37474f;font-style:italic;">"${rData.catatan || 'Belum ada catatan ustadzah.'}"</div>
+            </div>
+        `;
+    }
+
+    const editBtn = document.getElementById('btn-admin-edit-raport-direct');
+    if (editBtn) {
+        editBtn.onclick = function() {
+            closeModalViewRaportAdminPusat();
+            openModalInputRaportCabang(santri.nis);
+        };
+    }
+
+    document.getElementById('modalViewRaportAdminPusat')?.classList.add('open');
+}
+
+function closeModalViewRaportAdminPusat() {
+    document.getElementById('modalViewRaportAdminPusat')?.classList.remove('open');
 }
 
 function hapusSantri(nis) {
@@ -6390,6 +7363,794 @@ function downloadBrosurFromIframe() {
         iframe.contentWindow.downloadPDF();
     } else {
         window.open('brosur-bintang-rabbani.html', '_blank');
+    }
+}
+
+/* ============================================
+   RAPORT SANTRI — LOGIN, LOGOUT, DISPLAY
+   ============================================ */
+
+const surahJuz30List = [
+    { num: 114, name: 'Surah An-Nas' },
+    { num: 113, name: 'Surah Al-Falaq' },
+    { num: 112, name: 'Surah Al-Ikhlas' },
+    { num: 111, name: 'Surah Al-Lahab' },
+    { num: 110, name: 'Surah An-Nashr' },
+    { num: 109, name: 'Surah Al-Kafirun' },
+    { num: 108, name: 'Surah Al-Kautsar' },
+    { num: 107, name: 'Surah Al-Ma\'un' },
+    { num: 106, name: 'Surah Quraisy' },
+    { num: 105, name: 'Surah Al-Fil' },
+    { num: 104, name: 'Surah Al-Humazah' },
+    { num: 103, name: 'Surah Al-\'Asr' },
+    { num: 102, name: 'Surah At-Takasur' },
+    { num: 101, name: 'Surah Al-Qari\'ah' },
+    { num: 100, name: 'Surah Al-\'Adiyat' },
+    { num: 99,  name: 'Surah Az-Zalzalah' },
+    { num: 98,  name: 'Surah Al-Bayyinah' },
+    { num: 97,  name: 'Surah Al-Qadr' },
+    { num: 96,  name: 'Surah Al-\'Alaq' },
+    { num: 95,  name: 'Surah At-Tin' },
+    { num: 94,  name: 'Surah Asy-Syarh' },
+    { num: 93,  name: 'Surah Ad-Duha' },
+    { num: 92,  name: 'Surah Al-Lail' },
+    { num: 91,  name: 'Surah Asy-Syams' },
+    { num: 90,  name: 'Surah Al-Balad' },
+    { num: 89,  name: 'Surah Al-Fajr' },
+    { num: 88,  name: 'Surah Al-Ghasyiyah' },
+    { num: 87,  name: 'Surah Al-A\'la' },
+    { num: 86,  name: 'Surah At-Tariq' },
+    { num: 85,  name: 'Surah Al-Buruj' },
+    { num: 84,  name: 'Surah Al-Inshiqaq' },
+    { num: 83,  name: 'Surah Al-Mutaffifin' },
+    { num: 82,  name: 'Surah Al-Infitar' },
+    { num: 81,  name: 'Surah At-Takwir' },
+    { num: 80,  name: 'Surah \'Abasa' },
+    { num: 79,  name: 'Surah An-Nazi\'at' },
+    { num: 78,  name: 'Surah An-Naba' }
+];
+
+function populateSurahFilterDropdown() {
+    const select = document.getElementById('raport-filter-surah');
+    if (!select) return;
+    select.innerHTML = surahJuz30List.map(s => 
+        `<option value="${s.name} (Surah Ke-${s.num})">${s.name} — Surah Ke-${s.num}</option>`
+    ).join('');
+}
+
+function updateSurahTerakhirDisplay() {
+    const select = document.getElementById('raport-filter-surah');
+    const titleEl = document.getElementById('raport-surah-terakhir-title');
+    if (select && titleEl) {
+        titleEl.textContent = select.value;
+    }
+}
+
+/* ============================================
+   GURU CABANG: INPUT RAPORT (PREROGATIF GURU)
+   ============================================ */
+function openModalInputRaportCabang(nis) {
+    if (!nis) return;
+    const searchNis = String(nis).trim();
+    let branchId = sessionStorage.getItem('br_current_cabang_id');
+    const list = getCabangList();
+    let branch = list.find(c => c.id === branchId);
+    let santri = null;
+
+    if (branch && branch.santriList) {
+        santri = branch.santriList.find(s => String(s.nis).trim() === searchNis);
+    }
+
+    // Fallback if opened from Admin Pusat without branch session
+    if (!santri) {
+        for (let b of list) {
+            if (b.santriList) {
+                let s = b.santriList.find(x => String(x.nis).trim() === searchNis);
+                if (s) {
+                    santri = s;
+                    branch = b;
+                    sessionStorage.setItem('br_current_cabang_id', b.id);
+                    break;
+                }
+            }
+        }
+    }
+
+    if (!santri) {
+        alert('⚠️ Data santri tidak ditemukan.');
+        return;
+    }
+
+    document.getElementById('modal-raport-nis').value = santri.nis;
+    document.getElementById('modal-raport-badge-nis').textContent = `NIS: ${santri.nis}`;
+    document.getElementById('modal-raport-nama-santri').textContent = `Nama Santri: ${santri.nama}`;
+    document.getElementById('modal-raport-detail-santri').textContent = `Cabang: ${branch.namaCabang} | Wali: ${santri.namaWali || '—'} (${santri.waWali || '—'})`;
+
+    // Populate surah dropdown in modal
+    populateSurahFilterDropdownInModal();
+
+    // Fill existing values if any
+    const rData = santri.raportData || raportProgressDummy[santri.nis] || { p1: 85, p2: 78, p3: 90, p4: 72, catatan: '' };
+    const subScores = rData.subScores || {};
+
+    // Kelompok usia select
+    const ageSelect = document.getElementById('modal-raport-kelompok-usia');
+    if (ageSelect) {
+        ageSelect.value = rData.kelompokUsia || (santri.usia && parseInt(santri.usia) <= 6 ? '3-6' : '6-12');
+    }
+
+    // Surah Terakhir
+    const surahSelect = document.getElementById('modal-raport-surah-terakhir');
+    if (surahSelect && rData.surahTerakhir) {
+        surahSelect.value = rData.surahTerakhir;
+    }
+
+    // Doa Harian checkboxes
+    const savedDoaList = rData.doaHarianList || [
+        "Doa Sebelum & Sesudah Makan",
+        "Doa Sebelum & Bangun Tidur",
+        "Doa Untuk Kedua Orang Tua",
+        "Doa Kebaikan Dunia & Akhirat",
+        "Doa Sebelum Belajar"
+    ];
+
+    for (let i = 1; i <= 8; i++) {
+        const chk = document.getElementById(`doa-${i}`);
+        if (chk) {
+            chk.checked = savedDoaList.includes(chk.value);
+        }
+    }
+
+    const defaults = {
+        '1-1': subScores['1.1'] || (rData.p1 ? Math.min(100, rData.p1 + 2) : 85),
+        '1-2': subScores['1.2'] || (rData.p1 ? Math.max(0, rData.p1 - 1) : 84),
+        '1-3': subScores['1.3'] || (rData.p1 ? Math.min(100, rData.p1 + 1) : 86),
+        '1-4': subScores['1.4'] || (rData.p1 ? rData.p1 : 85),
+        '1-5': subScores['1.5'] || (rData.p1 ? Math.min(100, rData.p1 + 3) : 88),
+        '1-6': subScores['1.6'] || (rData.p1 ? Math.max(0, rData.p1 - 2) : 83),
+
+        '2-1': subScores['2.1'] || (rData.p2 ? Math.min(100, rData.p2 + 1) : 79),
+        '2-2': subScores['2.2'] || (rData.p2 ? Math.min(100, rData.p2 + 2) : 80),
+        '2-3': subScores['2.3'] || (rData.p2 ? Math.max(0, rData.p2 - 1) : 77),
+        '2-4': subScores['2.4'] || (rData.p2 ? rData.p2 : 78),
+        '2-5': subScores['2.5'] || (rData.p2 ? Math.max(0, rData.p2 - 2) : 76),
+
+        '3-1': subScores['3.1'] || (rData.p3 ? Math.min(100, rData.p3 + 2) : 92),
+        '3-2': subScores['3.2'] || (rData.p3 ? Math.min(100, rData.p3 + 1) : 91),
+        '3-3': subScores['3.3'] || (rData.p3 ? rData.p3 : 90),
+        '3-4': subScores['3.4'] || (rData.p3 ? Math.max(0, rData.p3 - 1) : 89),
+        '3-5': subScores['3.5'] || (rData.p3 ? Math.min(100, rData.p3 + 3) : 93),
+
+        '4-1': subScores['4.1'] || (rData.p4 ? Math.min(100, rData.p4 + 1) : 73),
+        '4-2': subScores['4.2'] || (rData.p4 ? Math.min(100, rData.p4 + 2) : 74),
+        '4-3': subScores['4.3'] || (rData.p4 ? rData.p4 : 72),
+        '4-4': subScores['4.4'] || (rData.p4 ? Math.max(0, rData.p4 - 1) : 71),
+        '4-5': subScores['4.5'] || (rData.p4 ? Math.min(100, rData.p4 + 1) : 73)
+    };
+
+    Object.keys(defaults).forEach(id => {
+        const el = document.getElementById(`sub-${id}`);
+        if (el) el.value = defaults[id];
+    });
+
+    document.getElementById('modal-raport-catatan').value = rData.catatan || '';
+
+    onKelompokUsiaChange();
+
+    document.getElementById('modalInputRaportCabang')?.classList.add('open');
+}
+
+function closeModalInputRaportCabang() {
+    document.getElementById('modalInputRaportCabang')?.classList.remove('open');
+}
+
+function populateSurahFilterDropdownInModal() {
+    const select = document.getElementById('modal-raport-surah-terakhir');
+    if (!select) return;
+    select.innerHTML = surahJuz30List.map(s => 
+        `<option value="${s.name} (Surah Ke-${s.num})">${s.name} — Surah Ke-${s.num}</option>`
+    ).join('');
+}
+
+function calculateRubrik7(avg) {
+    if (avg >= 95) return { code: 'A+', label: 'Mumtaz Murtafi\' (Istimewa)' };
+    if (avg >= 90) return { code: 'A',  label: 'Mumtaz (Sangat Baik)' };
+    if (avg >= 83) return { code: 'B+', label: 'Jayyid Jiddan (Baik Sekali)' };
+    if (avg >= 76) return { code: 'B',  label: 'Jayyid (Baik)' };
+    if (avg >= 70) return { code: 'C+', label: 'Maqbul Murtafi\' (Cukup Baik)' };
+    if (avg >= 63) return { code: 'C',  label: 'Maqbul (Cukup)' };
+    return { code: 'D', label: 'Perlu Bimbingan' };
+}
+
+function updateRubrik7Preview() {
+    const subIds = {
+        p1: ['1-1','1-2','1-3','1-4','1-5','1-6'],
+        p2: ['2-1','2-2','2-3','2-4','2-5'],
+        p3: ['3-1','3-2','3-3','3-4','3-5'],
+        p4: ['4-1','4-2','4-3','4-4','4-5']
+    };
+
+    let pAverages = { p1: 0, p2: 0, p3: 0, p4: 0 };
+
+    Object.keys(subIds).forEach(pkey => {
+        let sum = 0;
+        let count = 0;
+        subIds[pkey].forEach(id => {
+            const inp = document.getElementById(`sub-${id}`);
+            const val = parseFloat(inp?.value);
+            const score = isNaN(val) ? 0 : val;
+            sum += score;
+            count++;
+            
+            // Update individual star badge
+            const badge = document.getElementById(`star-badge-${id}`);
+            if (badge) {
+                if (!isNaN(val) && val >= 0) {
+                    const st = getStars7(val);
+                    badge.innerHTML = `<span style="color:#f57f17">${st.stars}</span> <strong>${st.code}</strong>`;
+                } else {
+                    badge.textContent = '-';
+                }
+            }
+        });
+
+        const avg = count > 0 ? Math.round(sum / count) : 0;
+        pAverages[pkey] = avg;
+
+        const hiddenInp = document.getElementById(`modal-raport-${pkey}`);
+        if (hiddenInp) hiddenInp.value = avg;
+
+        const labelEl = document.getElementById(`modal-${pkey}-avg-label`);
+        if (labelEl) {
+            const rub = getStars7(avg);
+            labelEl.innerHTML = `Rata-rata: <strong>${avg}</strong> (${rub.code})`;
+        }
+    });
+
+    const overallAvg = ((pAverages.p1 + pAverages.p2 + pAverages.p3 + pAverages.p4) / 4).toFixed(2);
+    const overallRub = calculateRubrik7(overallAvg);
+
+    const prevEl = document.getElementById('raport-rubrik7-preview');
+    if (prevEl) {
+        prevEl.innerHTML = `Rata-Rata Seluruh Pilar: <strong>${overallAvg}</strong> | Predikat 7 Skala: <strong>${overallRub.code} (${overallRub.label})</strong>`;
+    }
+}
+
+function simpanRaportLangsungCabang() {
+    const branchId = sessionStorage.getItem('br_current_cabang_id');
+    const nis = document.getElementById('modal-raport-nis')?.value;
+    const p1 = parseInt(document.getElementById('modal-raport-p1')?.value) || 0;
+    const p2 = parseInt(document.getElementById('modal-raport-p2')?.value) || 0;
+    const p3 = parseInt(document.getElementById('modal-raport-p3')?.value) || 0;
+    const p4 = parseInt(document.getElementById('modal-raport-p4')?.value) || 0;
+    const catatan = document.getElementById('modal-raport-catatan')?.value.trim();
+    const surahTerakhir = document.getElementById('modal-raport-surah-terakhir')?.value;
+    const kelompokUsia = document.getElementById('modal-raport-kelompok-usia')?.value;
+
+    if (!catatan) {
+        alert('⚠️ Harap isi Catatan Perkembangan dari Ustadzah.');
+        return;
+    }
+
+    const subScores = {};
+    const subIds = ['1-1','1-2','1-3','1-4','1-5','1-6','2-1','2-2','2-3','2-4','2-5','3-1','3-2','3-3','3-4','3-5','4-1','4-2','4-3','4-4','4-5'];
+    subIds.forEach(id => {
+        const dotId = id.replace('-', '.');
+        const val = parseInt(document.getElementById(`sub-${id}`)?.value) || 0;
+        subScores[dotId] = val;
+    });
+
+    const doaHarianList = [];
+    for (let i = 1; i <= 8; i++) {
+        const chk = document.getElementById(`doa-${i}`);
+        if (chk && chk.checked) {
+            doaHarianList.push(chk.value);
+        }
+    }
+
+    // 1. Update di br_cabang_data
+    let list = getCabangList();
+    const branch = list.find(c => c.id === branchId);
+    if (!branch || !branch.santriList) return;
+
+    const santri = branch.santriList.find(s => s.nis === nis);
+    if (!santri) return;
+
+    const newRaport = {
+        p1, p2, p3, p4,
+        subScores,
+        catatan,
+        surahTerakhir: (kelompokUsia === '6-12') ? surahTerakhir : '',
+        doaHarianList: (kelompokUsia === '3-6') ? doaHarianList : [],
+        kelompokUsia,
+        updatedAt: new Date().toLocaleDateString('id-ID')
+    };
+
+    santri.raportData = newRaport;
+    saveCabangList(list);
+
+    // 2. Sync otomatis di br_santri_data (Global Database Pusat)
+    let globalSantri = JSON.parse(localStorage.getItem('br_santri_data') || '[]');
+    const gSantri = globalSantri.find(s => s.nis === nis);
+    if (gSantri) {
+        gSantri.raportData = newRaport;
+        localStorage.setItem('br_santri_data', JSON.stringify(globalSantri));
+    }
+
+    // 3. Update cache real-time
+    raportProgressDummy[nis] = newRaport;
+
+    closeModalInputRaportCabang();
+    renderCabangDashboard();
+
+    alert(`✅ Raport Santri (${santri.nama} - NIS: ${nis}) Berhasil Disimpan & Terkoneksi Otomatis!\n\nPenilaian langsung tersimpan di database Cabang & Pusat tanpa membutuhkan approval.`);
+}
+
+let currentRaportProg = null;
+
+function getPillarDefinitions(ageGroup, prog) {
+    if (ageGroup === '3-6') {
+        return [
+            {
+                key: 'p1',
+                score: prog.p1 || 0,
+                title: 'Pilar 01: Tahsin, Tartil & Calistung Dasar / Motorik (PAUD/TK)',
+                icon: '📖',
+                color: 'var(--orange)',
+                bgGrad: 'linear-gradient(135deg, #FF6B35, #FFB300)',
+                badgeBg: 'rgba(255,107,53,0.1)',
+                items: [
+                    { id: '1.1', name: 'Pengenalan Huruf Hijaiyah & Makhorijul Huruf Dasar', cat: 'Ilmu Agama', delta: 2 },
+                    { id: '1.2', name: 'Hafalan Surah Short & Bacaan Tartil Awal', cat: 'Ilmu Agama', delta: -1 },
+                    { id: '1.3', name: 'Mewarnai Khat Hijaiyah & Motorik Halus', cat: 'Ilmu Agama', delta: 1 },
+                    { id: '1.4', name: 'Kedisiplinan PR/Tugas Sekolah TK/PAUD', cat: 'PR Sekolah', delta: 0 },
+                    { id: '1.5', name: 'Pemahaman Membaca & Berhitung Dasar Calistung', cat: 'PR Sekolah', delta: 3 },
+                    { id: '1.6', name: 'Kerapian & Kebersihan Lembar Kerja / PR Sekolah', cat: 'PR Sekolah', delta: -2 }
+                ]
+            },
+            {
+                key: 'p2',
+                score: prog.p2 || 0,
+                title: 'Pilar 02: Fiqih Ibadah Praktis Usia Dini',
+                icon: '🕌',
+                color: 'var(--green)',
+                bgGrad: 'linear-gradient(135deg, #00C896, #00BCD4)',
+                badgeBg: 'rgba(0,200,150,0.1)',
+                items: [
+                    { id: '2.1', name: 'Pembiasaan Gerakan Wudhu & Doa Sebelum Wudhu', cat: 'Praktik Ibadah', delta: 1 },
+                    { id: '2.2', name: 'Pengenalan Bacaan Sholat & Gerakan Sholat', cat: 'Praktik Ibadah', delta: 2 },
+                    { id: '2.3', name: 'Hafalan Doa Harian (Makan, Tidur, Orang Tua)', cat: 'Praktik Ibadah', delta: -1 },
+                    { id: '2.4', name: 'Adab Berbusana Rapi & Menjaga Kesucian Diri', cat: 'Adab Ibadah', delta: 0 },
+                    { id: '2.5', name: 'Semangat Mengikuti Sholat Berjamaah', cat: 'Habit Pembiasaan', delta: -2 }
+                ]
+            },
+            {
+                key: 'p3',
+                score: prog.p3 || 0,
+                title: 'Pilar 03: Akidah & Akhlakul Karimah Usia Dini',
+                icon: '💎',
+                color: 'var(--purple)',
+                bgGrad: 'linear-gradient(135deg, #9C27B0, #E91E63)',
+                badgeBg: 'rgba(156,39,176,0.1)',
+                items: [
+                    { id: '3.1', name: 'Pengenalan Rukun Iman, Rukun Islam & Allah Maha Pengasih', cat: 'Akidah Islam', delta: 2 },
+                    { id: '3.2', name: 'Sayang & Hormat Kepada Orang Tua & Guru', cat: 'Akhlakul Karimah', delta: 1 },
+                    { id: '3.3', name: 'Kejujuran & Kemauan Mengaku Kesalahan', cat: 'Karakter', delta: 0 },
+                    { id: '3.4', name: 'Kemampuan Berbagi & Tidak Mudah Marah', cat: 'Karakter', delta: -1 },
+                    { id: '3.5', name: 'Pembiasaan Menabung Infak Subuh / Sedekah', cat: 'Kedermawanan', delta: 3 }
+                ]
+            },
+            {
+                key: 'p4',
+                score: prog.p4 || 0,
+                title: 'Pilar 04: Kepedulian Sosial & Saling Membantu Teman',
+                icon: '🤝',
+                color: 'var(--blue)',
+                bgGrad: 'linear-gradient(135deg, #29B6F6, #0288D1)',
+                badgeBg: 'rgba(41,182,246,0.1)',
+                items: [
+                    { id: '4.1', name: 'Mau Bermain Bersama & Membantu Teman', cat: 'Empati & Kepedulian', delta: 1 },
+                    { id: '4.2', name: 'Suka Berbagi Bekal / Mainan / Alat Tulis', cat: 'Kepedulian Sosial', delta: 2 },
+                    { id: '4.3', name: 'Merapikan Mainan & Menjaga Kebersihan Kelas', cat: 'Gotong Royong', delta: 0 },
+                    { id: '4.4', name: 'Berkata Santun (Terima Kasih, Maaf, Tolong) & Tidak Mendorong', cat: 'Karakter Sosial', delta: -1 },
+                    { id: '4.5', name: 'Kepekaan Menolong Teman yang Menangis / Kesulitan', cat: 'Empati & Kepedulian', delta: 1 }
+                ]
+            }
+        ];
+    }
+
+    return [
+        {
+            key: 'p1',
+            score: prog.p1 || 0,
+            title: 'Pilar 01: Tahsin, Tartil & Calistung Lanjutan (PR Sekolah)',
+            icon: '📖',
+            color: 'var(--orange)',
+            bgGrad: 'linear-gradient(135deg, #FF6B35, #FFB300)',
+            badgeBg: 'rgba(255,107,53,0.1)',
+            items: [
+                { id: '1.1', name: 'Kelancaran & Ketepatan Makhorijul Huruf', cat: 'Ilmu Agama', delta: 2 },
+                { id: '1.2', name: 'Matang Tajwid (Ghunnah, Mad, Qalqalah) & Idgham', cat: 'Ilmu Agama', delta: -1 },
+                { id: '1.3', name: 'Keindahan & Kerapian Penulisan Khat Hijaiyah', cat: 'Ilmu Agama', delta: 1 },
+                { id: '1.4', name: 'Kedisiplinan Menyelesaikan PR Sekolah Tepat Waktu', cat: 'PR Sekolah', delta: 0 },
+                { id: '1.5', name: 'Pemahaman & Kebenaran Jawaban PR Sekolah', cat: 'PR Sekolah', delta: 3 },
+                { id: '1.6', name: 'Kerapian Tulisan & Kebersihan Buku PR Sekolah', cat: 'PR Sekolah', delta: -2 }
+            ]
+        },
+        {
+            key: 'p2',
+            score: prog.p2 || 0,
+            title: 'Pilar 02: Fiqih Ibadah & Praktik Harian',
+            icon: '🕌',
+            color: 'var(--green)',
+            bgGrad: 'linear-gradient(135deg, #00C896, #00BCD4)',
+            badgeBg: 'rgba(0,200,150,0.1)',
+            items: [
+                { id: '2.1', name: 'Kesempurnaan Gerakan & Bacaan Wudhu (Thaharah)', cat: 'Praktik Ibadah', delta: 1 },
+                { id: '2.2', name: 'Hafalan & Keteraturan Sholat 5 Waktu + Sunnah', cat: 'Praktik Ibadah', delta: 2 },
+                { id: '2.3', name: 'Praktik Zikir & Doa Setelah Sholat', cat: 'Praktik Ibadah', delta: -1 },
+                { id: '2.4', name: 'Adab Berbusana Muslim/Muslimah & Menjaga Kesucian', cat: 'Adab Ibadah', delta: 0 },
+                { id: '2.5', name: 'Kedisiplinan Ibadah Mandiri di Rumah & Masjid', cat: 'Habit Pembiasaan', delta: -2 }
+            ]
+        },
+        {
+            key: 'p3',
+            score: prog.p3 || 0,
+            title: 'Pilar 03: Akidah & Akhlakul Karimah',
+            icon: '💎',
+            color: 'var(--purple)',
+            bgGrad: 'linear-gradient(135deg, #9C27B0, #E91E63)',
+            badgeBg: 'rgba(156,39,176,0.1)',
+            items: [
+                { id: '3.1', name: 'Pemahaman Rukun Iman, Rukun Islam & Asmaul Husna', cat: 'Akidah Islam', delta: 2 },
+                { id: '3.2', name: 'Adab Terhadap Orang Tua, Guru & Sesama', cat: 'Akhlakul Karimah', delta: 1 },
+                { id: '3.3', name: 'Kejujuran, Amanah & Tanggung Jawab Harian', cat: 'Karakter', delta: 0 },
+                { id: '3.4', name: 'Kontrol Emosi, Kesabaran & Bahasa Santun', cat: 'Karakter', delta: -1 },
+                { id: '3.5', name: 'Kebiasaan Infak, Sedekah & Berbagi Harian', cat: 'Kedermawanan', delta: 3 }
+            ]
+        },
+        {
+            key: 'p4',
+            score: prog.p4 || 0,
+            title: 'Pilar 04: Kepedulian Sosial & Saling Membantu Teman',
+            icon: '🤝',
+            color: 'var(--blue)',
+            bgGrad: 'linear-gradient(135deg, #29B6F6, #0288D1)',
+            badgeBg: 'rgba(41,182,246,0.1)',
+            items: [
+                { id: '4.1', name: 'Kepekaan Membantu Teman yang Kesulitan Belajar', cat: 'Empati & Kepedulian', delta: 1 },
+                { id: '4.2', name: 'Sikap Dermawan & Suka Berbagi Makanan/Alat Tulis', cat: 'Kepedulian Sosial', delta: 2 },
+                { id: '4.3', name: 'Kerjasama Tim, Gotong Royong & Menjaga Kebersihan', cat: 'Gotong Royong', delta: 0 },
+                { id: '4.4', name: 'Menjauhi Perundungan (Anti-Bullying) & Menjaga Perasaan', cat: 'Karakter Sosial', delta: -1 },
+                { id: '4.5', name: 'Inisiatif Kebaikan Lingkungan & Kepedulian Sesama', cat: 'Empati & Kepedulian', delta: 1 }
+            ]
+        }
+    ];
+}
+
+function onKelompokUsiaChange() {
+    const ageGroup = document.getElementById('modal-raport-kelompok-usia')?.value || '6-12';
+    
+    const surahContainer = document.getElementById('modal-container-surah-terakhir');
+    const doaContainer = document.getElementById('modal-container-doa-harian');
+
+    if (ageGroup === '3-6') {
+        if (surahContainer) surahContainer.style.display = 'none';
+        if (doaContainer) doaContainer.style.display = 'block';
+    } else {
+        if (surahContainer) surahContainer.style.display = 'block';
+        if (doaContainer) doaContainer.style.display = 'none';
+    }
+
+    updateModalSubLabels(ageGroup);
+    updateRubrik7Preview();
+}
+
+function updateModalSubLabels(ageGroup) {
+    const dummyProg = { p1: 85, p2: 78, p3: 90, p4: 72 };
+    const defs = getPillarDefinitions(ageGroup, dummyProg);
+    defs.forEach(p => {
+        p.items.forEach(item => {
+            const id = item.id.replace('.', '-');
+            const inp = document.getElementById(`sub-${id}`);
+            if (inp) {
+                const parentDiv = inp.closest('div')?.parentElement;
+                const label = parentDiv?.querySelector('label');
+                if (label) {
+                    label.textContent = `${item.id} ${item.name} (${item.cat.includes('Agama') ? 'Agama' : (item.cat.includes('PR') ? 'Umum/PR' : item.cat)})`;
+                }
+            }
+        });
+    });
+}
+
+function onRaportFilterUsiaChange() {
+    const ageGroup = document.getElementById('raport-filter-usia')?.value || '6-12';
+    const titleEl = document.getElementById('raport-usia-active-title');
+    const subEl = document.getElementById('raport-usia-active-sub');
+
+    if (titleEl) {
+        titleEl.textContent = ageGroup === '3-6' 
+            ? 'Rentang Usia 3 – 6 Tahun (PAUD/TK)' 
+            : 'Rentang Usia 6 – 12 Tahun (SD)';
+    }
+    if (subEl) {
+        subEl.textContent = ageGroup === '3-6'
+            ? 'Matriks 4 Pilar PAUD/TK Terbuka Lengkap'
+            : 'Matriks 4 Pilar SD Terbuka Lengkap';
+    }
+
+    if (currentRaportProg) {
+        renderDetailedRaportPillars(currentRaportProg, ageGroup);
+    }
+}
+
+function doRaportLogin() {
+    const nis = document.getElementById('raport-nis-input')?.value.trim();
+    const pass = document.getElementById('raport-pass-input')?.value.trim();
+    const errEl = document.getElementById('raport-login-error');
+
+    if (!nis || !pass) {
+        if (errEl) { errEl.style.display = ''; errEl.textContent = '⚠️ Harap isi NIS dan Password terlebih dahulu.'; }
+        return;
+    }
+
+    // Cari santri di br_santri_data
+    const allSantri = JSON.parse(localStorage.getItem('br_santri_data') || '[]');
+    const found = allSantri.find(s => s.nis === nis && s.password === pass);
+
+    if (!found) {
+        if (errEl) { errEl.style.display = ''; errEl.textContent = '❌ NIS atau Password tidak sesuai. Periksa kembali atau hubungi admin.'; }
+        return;
+    }
+
+    // Login berhasil — sembunyikan error dan form login, tampilkan raport
+    if (errEl) errEl.style.display = 'none';
+    document.getElementById('raport-login-section').style.display = 'none';
+
+    // Isi data santri
+    document.getElementById('raport-nama-santri').textContent = found.nama || '—';
+    document.getElementById('raport-display-nis').textContent = found.nis || '—';
+    document.getElementById('raport-display-cabang').textContent = found.cabang || '—';
+    
+    // Auto-fill metadata penanggung jawab dari database
+    const waliEl = document.getElementById('raport-display-wali');
+    const waWaliEl = document.getElementById('raport-display-wa-wali');
+    const ustadzahEl = document.getElementById('raport-display-ustadzah');
+    const progEl = document.getElementById('raport-display-program');
+    const usiaEl = document.getElementById('raport-display-usia-detail');
+
+    if (waliEl) waliEl.textContent = found.namaWali || '—';
+    if (waWaliEl) waWaliEl.textContent = 'WA: ' + (found.waWali || '—');
+    
+    // Determine teacher based on branch
+    let teacherName = 'Ustadzah Nia Kurniati, S.Pd';
+    if (found.cabang && found.cabang.toLowerCase().includes('duren')) {
+        teacherName = 'Ustadz Rizki Zulkarnain';
+    }
+    if (ustadzahEl) ustadzahEl.textContent = teacherName;
+    if (progEl) progEl.textContent = (found.program || 'General/Umum') + ' (' + (found.jk || 'Putra') + ')';
+    if (usiaEl) usiaEl.textContent = 'Rentang Usia: ' + (found.usia || '5') + ' Tahun';
+
+    // Populate Surah Dropdown & initial selection
+    populateSurahFilterDropdown();
+    updateSurahTerakhirDisplay();
+
+    // Isi progress pilar
+    const prog = (found && found.raportData) ? found.raportData : (raportProgressDummy[found.nis] || { p1: 80, p2: 75, p3: 85, p4: 70, catatan: 'Data raport sedang diproses oleh ustadzah.' });
+    currentRaportProg = prog;
+
+    const initialAgeGroup = prog.kelompokUsia || (found.usia && parseInt(found.usia) <= 6 ? '3-6' : '6-12');
+    
+    // Render Detailed 4-Pillar Sub-indicators Table with 7 Stars Rating
+    renderDetailedRaportPillars(prog, initialAgeGroup);
+
+    // Isi catatan ustadzah
+    const catatanEl = document.getElementById('raport-catatan-ustadzah');
+    if (catatanEl) catatanEl.textContent = prog.catatan || '—';
+
+    // Tampilkan raport
+    document.getElementById('raport-view-section').style.display = '';
+
+    // Clear input
+    if (document.getElementById('raport-nis-input')) document.getElementById('raport-nis-input').value = '';
+    if (document.getElementById('raport-pass-input')) document.getElementById('raport-pass-input').value = '';
+}
+
+function getStars7(score) {
+    if (score >= 95) return { stars: '⭐⭐⭐⭐⭐⭐⭐', code: 'A+', label: 'Mumtaz Murtafi\'' };
+    if (score >= 90) return { stars: '⭐⭐⭐⭐⭐⭐☆', code: 'A', label: 'Mumtaz' };
+    if (score >= 83) return { stars: '⭐⭐⭐⭐⭐☆☆', code: 'B+', label: 'Jayyid Jiddan' };
+    if (score >= 76) return { stars: '⭐⭐⭐⭐☆☆☆', code: 'B', label: 'Jayyid' };
+    if (score >= 70) return { stars: '⭐⭐⭐☆☆☆☆', code: 'C+', label: 'Maqbul Murtafi\'' };
+    if (score >= 63) return { stars: '⭐⭐☆☆☆☆☆', code: 'C', label: 'Maqbul' };
+    return { stars: '⭐☆☆☆☆☆☆', code: 'D', label: 'Perlu Bimbingan' };
+}
+
+function renderDetailedRaportPillars(prog, ageGroup) {
+    const container = document.getElementById('raport-pilar-section');
+    if (!container) return;
+
+    if (!ageGroup) {
+        ageGroup = document.getElementById('raport-filter-usia')?.value || prog?.kelompokUsia || '6-12';
+    }
+
+    // 1. Update Card 1: Status Kelompok Usia
+    const titleEl = document.getElementById('raport-usia-active-title');
+    const subEl = document.getElementById('raport-usia-active-sub');
+    if (titleEl) titleEl.textContent = ageGroup === '3-6' ? 'Rentang Usia 3 – 6 Tahun (PAUD/TK)' : 'Rentang Usia 6 – 12 Tahun (SD)';
+    if (subEl) subEl.textContent = ageGroup === '3-6' ? 'Matriks 4 Pilar PAUD/TK Terbuka Lengkap' : 'Matriks 4 Pilar SD Terbuka Lengkap';
+
+    const filterSelect = document.getElementById('raport-filter-usia');
+    if (filterSelect) filterSelect.value = ageGroup;
+
+    // 2. Update Card 2: Capaian Hafalan (Doa-Doa Harian 3-6 / Surah Terakhir 6-12)
+    const hafalanTitleEl = document.getElementById('raport-hafalan-card-title');
+    const hafalanSubEl = document.getElementById('raport-hafalan-card-sub');
+    const hafalanDisplayBox = document.getElementById('raport-hafalan-display-box');
+
+    if (ageGroup === '3-6') {
+        if (hafalanTitleEl) hafalanTitleEl.textContent = 'Capaian Hafalan Doa-Doa Harian';
+        if (hafalanSubEl) hafalanSubEl.textContent = 'Daftar Doa-Doa Harian Usia Dini (3 – 6 Tahun) yang Telah Dihafal';
+        if (hafalanDisplayBox) {
+            const list = prog.doaHarianList || [
+                "Doa Sebelum & Sesudah Makan",
+                "Doa Sebelum & Bangun Tidur",
+                "Doa Untuk Kedua Orang Tua",
+                "Doa Kebaikan Dunia & Akhirat",
+                "Doa Sebelum Belajar"
+            ];
+            let badgesHtml = list.length > 0 
+                ? list.map(d => `<span style="display:inline-flex;align-items:center;gap:.35rem;background:#E8F5E9;color:#2E7D32;font-size:.76rem;font-weight:800;padding:.35rem .65rem;border-radius:8px;border:1px solid #A5D6A7;"><i class="fa-solid fa-circle-check" style="color:#4CAF50;"></i> ${d}</span>`).join('')
+                : '<span style="color:#78909c;font-size:.8rem;font-style:italic;">Belum ada doa harian yang dicentang.</span>';
+            
+            hafalanDisplayBox.innerHTML = `
+                <div style="font-size:.7rem;color:#78909c;font-weight:700;margin-bottom:.4rem;text-transform:uppercase;">DAFTAR DOA HARIAN YANG TELAH DIHAFAL:</div>
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;">
+                    ${badgesHtml}
+                </div>
+            `;
+        }
+    } else {
+        if (hafalanTitleEl) hafalanTitleEl.textContent = 'Capaian Hafalan Surah Terakhir';
+        if (hafalanSubEl) hafalanSubEl.textContent = 'Laporan Capaian Hafalan Surah Berdasarkan Isian Raport Guru';
+        if (hafalanDisplayBox) {
+            hafalanDisplayBox.innerHTML = `
+                <div style="font-size:.7rem;color:#78909c;font-weight:700;text-transform:uppercase;">HAFALAN SURAH TERAKHIR DALAM RAPORT:</div>
+                <div style="font-size:1.05rem;font-weight:900;color:var(--blue);margin-top:.15rem;" id="raport-surah-terakhir-title">${prog.surahTerakhir || 'Surah An-Nas (Surah Ke-114)'}</div>
+                <div style="font-size:.72rem;color:var(--green);font-weight:700;margin-top:.1rem;" id="raport-surah-status">Status: Lulus & Fast-Hafizh ⭐⭐⭐⭐⭐</div>
+            `;
+        }
+    }
+
+    const pillars = getPillarDefinitions(ageGroup, prog);
+
+    let html = '';
+    let totalSubScoreSum = 0;
+    let totalSubScoreCount = 0;
+
+    pillars.forEach(p => {
+        const overallRub = getStars7(p.score);
+        html += `
+        <div style="background:white;border-radius:16px;padding:1.25rem;margin-bottom:1.5rem;box-shadow:0 4px 15px rgba(0,0,0,0.06);border:1px solid #e2e8f0;border-left:5px solid ${p.color};">
+            <!-- Header Pillar Summary -->
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1rem;">
+                <div style="display:flex;align-items:center;gap:.6rem;">
+                    <span style="font-size:1.6rem;">${p.icon}</span>
+                    <div>
+                        <h4 style="font-family:var(--font-head);font-size:1.05rem;color:var(--dark);margin:0;">${p.title}</h4>
+                        <div style="font-size:.78rem;color:#78909c;">Nilai Rata-rata Pilar: <strong style="color:${p.color};font-size:.9rem;">${p.score} / 100</strong></div>
+                    </div>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:.85rem;letter-spacing:1px;">${overallRub.stars}</div>
+                    <span style="display:inline-block;font-size:.75rem;font-weight:800;padding:.2rem .6rem;border-radius:12px;background:${p.badgeBg};color:${p.color};margin-top:.2rem;">
+                        ${overallRub.code} — ${overallRub.label}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div style="height:10px;background:#eef2f6;border-radius:10px;overflow:hidden;margin-bottom:1.2rem;">
+                <div style="height:100%;border-radius:10px;background:${p.bgGrad};width:${p.score}%;transition:width 1.2s ease;"></div>
+            </div>
+
+            <!-- Sub-indicators Detailed Table -->
+            <div style="overflow-x:auto;border-radius:12px;border:1px solid #edf2f7;">
+                <table style="width:100%;border-collapse:collapse;font-size:.82rem;text-align:left;">
+                    <thead>
+                        <tr style="background:#f8fafc;color:#475569;font-weight:700;border-bottom:2px solid #e2e8f0;">
+                            <th style="padding:.65rem .8rem;width:45px;text-align:center;">No</th>
+                            <th style="padding:.65rem .8rem;">Detail Sub-Indikator Capaian (${ageGroup === '3-6' ? 'Usia 3-6 Thn' : 'Usia 6-12 Thn'})</th>
+                            <th style="padding:.65rem .8rem;">Kategori</th>
+                            <th style="padding:.65rem .8rem;text-align:center;">Skala 7 Bintang</th>
+                            <th style="padding:.65rem .8rem;text-align:center;width:70px;">Nilai</th>
+                            <th style="padding:.65rem .8rem;text-align:center;">Predikat (7 Skala)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+
+        p.items.forEach((item, idx) => {
+            const subScore = (prog.subScores && prog.subScores[item.id] !== undefined)
+                ? prog.subScores[item.id]
+                : Math.min(100, Math.max(40, p.score + item.delta));
+
+            totalSubScoreSum += subScore;
+            totalSubScoreCount++;
+
+            const subRub = getStars7(subScore);
+            const isEven = idx % 2 === 0;
+            const bgRow = isEven ? '#ffffff' : '#f8fafc';
+            const catBadgeBg = item.cat.includes('Agama') ? '#E8F5E9' : (item.cat.includes('PR') ? '#FFF3E0' : '#E3F2FD');
+            const catBadgeColor = item.cat.includes('Agama') ? '#2E7D32' : (item.cat.includes('PR') ? '#E65100' : '#1565C0');
+
+            html += `
+                        <tr style="background:${bgRow};border-bottom:1px solid #f1f5f9;">
+                            <td style="padding:.6rem .8rem;text-align:center;font-weight:700;color:#64748b;">${item.id}</td>
+                            <td style="padding:.6rem .8rem;font-weight:600;color:var(--dark);">${item.name}</td>
+                            <td style="padding:.6rem .8rem;">
+                                <span style="font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:8px;background:${catBadgeBg};color:${catBadgeColor};white-space:nowrap;">
+                                    ${item.cat}
+                                </span>
+                            </td>
+                            <td style="padding:.6rem .8rem;text-align:center;font-size:.85rem;letter-spacing:1px;white-space:nowrap;">${subRub.stars}</td>
+                            <td style="padding:.6rem .8rem;text-align:center;font-weight:800;color:${p.color};">${subScore}</td>
+                            <td style="padding:.6rem .8rem;text-align:center;white-space:nowrap;">
+                                <span style="font-size:.72rem;font-weight:800;padding:.15rem .5rem;border-radius:8px;background:rgba(0,0,0,0.04);color:#334155;">
+                                    ${subRub.code} (${subRub.label})
+                                </span>
+                            </td>
+                        </tr>
+            `;
+        });
+
+        html += `
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    // Update overall summary card (Standar Skala Predikat & Rubrik Penilaian Akhir)
+    if (totalSubScoreCount > 0) {
+        const overallAvg = (totalSubScoreSum / totalSubScoreCount).toFixed(2);
+        const overallRub = calculateRubrik7(overallAvg);
+        const starObj = getStars7(overallAvg);
+
+        const avgEl = document.getElementById('raport-overall-avg-val');
+        const starEl = document.getElementById('raport-overall-stars-val');
+        const badgeEl = document.getElementById('raport-overall-badge-val');
+
+        if (avgEl) avgEl.textContent = `${overallAvg} / 100`;
+        if (starEl) starEl.textContent = starObj.stars;
+        if (badgeEl) badgeEl.textContent = `${overallRub.code} — ${overallRub.label}`;
+    }
+}
+
+function doRaportLogout() {
+    document.getElementById('raport-login-section').style.display = '';
+    document.getElementById('raport-view-section').style.display = 'none';
+    // Reset progress bars
+    ['r-bar-1','r-bar-2','r-bar-3','r-bar-4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.width = '0%';
+    });
+}
+
+function toggleRaportPassVis() {
+    const inp = document.getElementById('raport-pass-input');
+    const eyeIcon = document.getElementById('raport-pass-eye')?.querySelector('i');
+    if (!inp) return;
+    if (inp.type === 'password') {
+        inp.type = 'text';
+        if (eyeIcon) eyeIcon.className = 'fa-solid fa-eye-slash';
+    } else {
+        inp.type = 'password';
+        if (eyeIcon) eyeIcon.className = 'fa-solid fa-eye';
     }
 }
 
