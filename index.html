@@ -3455,36 +3455,85 @@
                     </div>
                 </div>
 
-                <!-- CARD: Syarat & Ketentuan -->
-                <div class="sk-section" id="sk-section">
-                    <div class="sk-header" onclick="toggleSK()">
-                        <h4>
-                            <i class="fa-solid fa-file-contract" style="color:var(--orange);"></i>
-                            SYARAT &amp; KETENTUAN
-                            <span style="color:var(--pink);font-size:.72rem;font-weight:700;">⚠️ Wajib Dibaca &amp; Disetujui</span>
+                <!-- CARD: Syarat & Ketentuan (Open by Default) -->
+                <div class="sk-section open" id="sk-section" style="background:#FFFDE7;border:2.5px solid #FFD54F;border-radius:16px;padding:1.2rem;margin-top:1.5rem;box-shadow:0 4px 15px rgba(255,213,79,0.2);">
+                    <div class="sk-header" onclick="toggleSK()" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+                        <h4 style="font-family:var(--font-head);font-size:1.1rem;color:var(--dark);margin:0;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+                            <i class="fa-solid fa-file-contract" style="color:var(--orange);font-size:1.3rem;"></i>
+                            SYARAT &amp; KETENTUAN PENDAFTARAN SANTRI BARU
+                            <span style="background:#FF4081;color:white;font-size:.72rem;font-weight:800;padding:.2rem .6rem;border-radius:12px;">⚠️ Wajib Dibaca &amp; Disetujui</span>
                         </h4>
                         <i class="fa-solid fa-chevron-down sk-toggle-icon"></i>
                     </div>
                     <div class="sk-body">
-                        <div class="sk-content">
-                            <p style="font-style:italic;color:#546e7a;margin-bottom:.8rem;">Pendidikan akhlak dan ilmu agama adalah tanggung jawab bersama. S&amp;K ini dibuat untuk memastikan lingkungan belajar terstruktur dan kondusif.</p>
-                            <h5>1. Syarat Umum Pendaftaran</h5>
-                            <ul>
-                                <li><strong>Usia Kesiapan:</strong> Memiliki kemandirian dasar dan kesiapan belajar.</li>
-                                <li><strong>Administrasi:</strong> Mengisi formulir dengan benar dan jujur.</li>
-                                <li><strong>SPP Bulanan:</strong> Paling lambat tanggal 1 ke Rekening BSI No. 7027231335 a.n Rizki Zulkarnain.</li>
-                            </ul>
-                            <h5>2. Adab Santri &amp; Orang Tua</h5>
-                            <ul>
-                                <li>Berpakaian rapi &amp; sopan (Putra: koko &amp; peci, Putri: gamis &amp; hijab).</li>
-                                <li>Hadir tepat waktu dan menjaga kebersihan kelas.</li>
-                            </ul>
+                        <div class="sk-content" style="margin-top:1rem;">
+                            <p style="font-style:italic;color:#455a64;margin-bottom:1rem;background:white;padding:.6rem 1rem;border-radius:10px;border-left:4px solid var(--blue);font-size:.85rem;line-height:1.4;">
+                                Pendidikan akhlak, ilmu umum, dan agama adalah tanggung jawab bersama. Syarat &amp; Ketentuan ini dibuat untuk memastikan lingkungan belajar terstruktur, efektif, dan kondusif bagi tumbuh kembang putra-putri kita.
+                            </p>
+                            
+                            <!-- POIN 1: SPP BULANAN -->
+                            <div style="background:white;border-radius:12px;padding:.9rem 1rem;margin-bottom:.8rem;border:1px solid #FFE082;border-left:5px solid var(--orange);">
+                                <h5 style="color:var(--dark);font-size:.95rem;font-weight:800;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;">
+                                    <span>💰</span> 1. SPP Bulanan &amp; Rekening Pembayaran
+                                </h5>
+                                <ul style="padding-left:1.2rem;margin:0;font-size:.85rem;color:#37474f;line-height:1.5;">
+                                    <li style="margin-bottom:.3rem;">
+                                        SPP Bulanan dengan nominal <strong>Rp.200.000 / bulan / orang</strong>.
+                                    </li>
+                                    <li style="margin-bottom:.3rem;">
+                                        Pembayaran dilakukan paling lambat <strong>tanggal 30/31 pada setiap akhir bulan</strong>.
+                                    </li>
+                                    <li>
+                                        Pembayaran ditransfer ke <strong>Rekening BSI No. 7027231335 a.n Rizki Zulkarnain</strong>.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- POIN 2: PAKAIAN SANTRI -->
+                            <div style="background:white;border-radius:12px;padding:.9rem 1rem;margin-bottom:.8rem;border:1px solid #B3E5FC;border-left:5px solid var(--blue);">
+                                <h5 style="color:var(--dark);font-size:.95rem;font-weight:800;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;">
+                                    <span>👔</span> 2. Ketentuan Pakaian Santri
+                                </h5>
+                                <ul style="padding-left:1.2rem;margin:0;font-size:.85rem;color:#37474f;line-height:1.5;">
+                                    <li style="margin-bottom:.3rem;">
+                                        Berpakaian rapi &amp; sopan (Putra: Baju Koko dan celana panjang; Putri: Pakaian sopan dan mengenakan Hijab/Jilbab).
+                                    </li>
+                                    <li>
+                                        <strong>Tambahan:</strong> Dan atau seragam Bimbel TPQ Plus Bintang Rabbani yang akan dicanangkan selanjutnya.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- POIN 3: BUKU PR SEKOLAH -->
+                            <div style="background:white;border-radius:12px;padding:.9rem 1rem;margin-bottom:.8rem;border:1px solid #C8E6C9;border-left:5px solid var(--green);">
+                                <h5 style="color:var(--dark);font-size:.95rem;font-weight:800;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;">
+                                    <span>📚</span> 3. Buku PR Sekolah (Usia 6–12 Tahun SD/Sederajat)
+                                </h5>
+                                <ul style="padding-left:1.2rem;margin:0;font-size:.85rem;color:#37474f;line-height:1.5;">
+                                    <li>
+                                        Membawa buku PR Sekolah, pada saat pelajaran pendampingan PR Sekolah bagi anak usia 6-12 Tahun SD/Sederajat, agar memudahkan dan dalam pembelajaran pendampingan PR Sekolah.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- POIN 4: SINERGI WALI SANTRI & GURU -->
+                            <div style="background:white;border-radius:12px;padding:.9rem 1rem;margin-bottom:.8rem;border:1px solid #E1BEE7;border-left:5px solid var(--purple);">
+                                <h5 style="color:var(--dark);font-size:.95rem;font-weight:800;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem;">
+                                    <span>🤝</span> 4. Sinergi &amp; Peran Aktif Wali Santri dan Guru
+                                </h5>
+                                <ul style="padding-left:1.2rem;margin:0;font-size:.85rem;color:#37474f;line-height:1.5;">
+                                    <li>
+                                        Berkomitmen pada peran aktif Wali Santri dan Guru untuk saling bersinergi agar dapat mengembangkan prestasi anak dari sisi ilmu Umum dan Agama.
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
-                        <div class="sk-agree-wrap">
-                            <label class="sk-agree-label">
-                                <input type="checkbox" id="sk-agree-check" onchange="handleSKAgree(this)">
-                                <span class="sk-agree-text">
-                                    Saya telah membaca, memahami, dan <strong>menyetujui seluruh Syarat &amp; Ketentuan</strong> pendaftaran BIMBEL Plus TPQ Bintang Rabbani.
+                        <div class="sk-agree-wrap" style="margin-top:1.2rem;background:white;padding:.8rem 1rem;border-radius:12px;border:2px solid var(--green);">
+                            <label class="sk-agree-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
+                                <input type="checkbox" id="sk-agree-check" onchange="handleSKAgree(this)" style="width:20px;height:20px;cursor:pointer;">
+                                <span class="sk-agree-text" style="font-size:.88rem;color:#263238;">
+                                    Saya telah membaca, memahami, dan <strong>menyetujui seluruh Syarat &amp; Ketentuan</strong> pendaftaran BIMBEL Plus TPQ Bintang Rabbani di atas.
                                 </span>
                             </label>
                         </div>
@@ -5548,6 +5597,7 @@ function openPortalView(type) {
     if (type === 'santri') {
         cardSantri?.classList.add('active');
         containerSantri?.classList.add('show');
+        document.getElementById('sk-section')?.classList.add('open');
         setTimeout(() => {
             containerSantri?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 80);
